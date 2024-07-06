@@ -1,0 +1,261 @@
+#### Jquery holo javascript er Library.
+
+### Jquery er maddhome je kaj gulo khub sohoje kora jye se gulo holo.
+
+* short selectors
+* Variety of Animation Functions
+* Easy Dom Manipulation
+* Easy CSS styling
+* Easy DOM Traversing
+* Simple Ajax Code
+
+
+    =============================JQUERY SYNTEX==============================
+
+   <script>
+    $(document).ready(function(){
+       
+    })
+   </script>
+  ## document->selector->target dom element
+  ## Method -> what work
+
+ ## Another Method Jquery.
+ $(function(){
+})
+
+
+
+    ================================JQUERY SELTCTOR==============================
+
+## Jquery te class ke dorte = hoy $('.classname')'
+
+## jquery te id ke dorte hoy =  $('#idname');
+## jquery te kono html tag dorte hoy = $('tagname');
+
+### 3 septs jquery file bebohar kora jye.
+    1. download jquery.js file
+    2. head section include kore.
+    3. script tag er moddhe include kore.
+
+$(.abc, .xyz) = ak shati akadik class select kora jye
+$(p:first)  = protom paragraph tag ti select kora hoy.
+$(p:last)   = last paragraph tag ti select kora hoy.
+
+ =============================JQUERY CSS STYLE==============================
+
+1. single Css Style
+   
+   <script>
+    $(document).ready(function(){
+        $('#list').css('color', 'red','border', '2px solid black')
+    })
+   </script>
+
+2. Multiple Css Style
+
+<script>
+    $(document).ready(function(){
+        $('#list').css({
+            'color': 'red',
+            'border': '2px solid black'
+        });
+    });
+
+</script>
+
+3. <script>
+    $(document).ready(function(){
+        $('li:first').css({
+            'color': 'red',
+            'border': '2px solid black',
+            'width': '200px'
+        });
+    });
+</script>
+
+
+ =============================JQUERY Mouse Events==============================
+
+1. Click()
+
+2. dblclick()
+
+3. contextmenu()
+
+4. mouseenter()
+
+5. mouseleave()
+
+-------------------click()--------------------
+   
+<script>
+    $(document).ready(function(){
+       $('#text-box1').click(function(){
+        var a  = $('#text-box1').html();
+        console.log(a);
+       })
+      
+    });
+</script>
+
+-------------------dblclick()--------------------
+
+
+<script>
+  $(document).ready(function(){
+    $('.text-box3').click(function(){
+     $('.text-box3').css({'background':'red', 'color':'white', 'width': '200px'})
+    })
+    $('.text-box3').dblclick(function(){
+        $('.text-box3').css({'background': 'yellow', 'color': 'black'})
+    })
+  })
+</script>
+
+-------------------contextmenu()--------------------
+
+<script>
+  $(document).ready(function(){
+    $('.text-box3').click(function(){
+     $('.text-box3').css({'background':'red', 'color':'white', 'width': '200px'})
+    })
+    $('.text-box3').dblclick(function(){
+        $('.text-box3').css({'background': 'yellow', 'color': 'black'})
+        $('.text-box3').contextmenu(function(){
+        $ ('.text-box3').css('background-color', 'blue')
+        })
+    })
+  })
+</script>
+
+-------------------mouseenter()--------------------
+
+<script>
+  $(document).ready(function(){
+    $('.text-box3').mouseenter(function(){
+     $('.text-box3').css({'background':'red', 'color':'white'})
+    })
+  
+  })
+</script>
+
+
+-------------------mouseleave()--------------------
+
+<script>
+  $(document).ready(function(){
+    $('.text-box3').mouseenter(function(){
+     $('.text-box3').css({'background':'red', 'color':'white'})
+    })
+    $('.text-box3').mouseleave(function(){
+        $('.text-box3').css({'background-color': 'purple', 'color': 'white'})
+    })
+  
+  })
+</script>
+
+
+ =============================JQUERY KEYBOARD EVENTS==============================
+1. keypress
+2. keydown
+3. keyup
+
+
+--------------------------------KEYPRESS()-------------------------------------------
+
+    <script>
+      $(document).ready(function () {
+        $("body").keypress(function () {
+          $(this).css("background-color", "orange");
+        });
+      });
+    </script>
+
+--------------------------------KEYUP()-------------------------------------------
+
+  <script>
+      $(document).ready(function () {
+        $("body").keypress(function () {
+          $(this).css("background-color", "orange");
+        });
+        $("body").keyup(function () {
+          $(this).css("background-color", "green");
+        });
+      });
+    </script>
+
+
+
+ =============================JQUERY FORM EVENTS==============================
+
+1. focus()
+
+2. blur()
+
+3. change()
+
+4. select()
+
+5. submit()
+
+--------------------------------focus()-------------------------------------------
+  <script>
+
+   $(document).ready(function(){
+  $('#sname').focus(function(){
+    $(this).css({'background-color':'green', 'color': 'red '});
+  })
+})
+    </script>
+
+--------------------------------blur()-------------------------------------------
+
+ <script>
+
+$(document).ready(function(){
+  $('#sname').blur(function(){
+    $(this).css({'background-color':'red', 'color': 'red '});
+  })
+    </script>
+
+ --------------------------------change()-------------------------------------------
+
+$(document).ready(function(){
+  $('#dist').change(function(){
+    $(this).css({'background-color':'red', 'color': 'white '});
+  })
+})
+
+
+ --------------------------------select()-------------------------------------------
+
+
+$(document).ready(function(){
+  $('#dist').change(function(){
+    $(this).css({'background-color':'red', 'color': 'white '});
+  })
+})
+ --------------------------------scroll()-------------------------------------------
+
+
+$(document).ready(function(){
+    $(window).scroll(function(){
+        console.log('here are scrolling');
+    });
+})
+
+
+
+ =============================JQUERY GET METHODS==============================
+
+1. text()
+2. html()
+3. attr()
+4. val()
+
+  --------------------------------text()-------------------------------------------
+$(document).ready(function(){
+      var a =   $('.show-scroll').text();
+      console.log(a);
+        })

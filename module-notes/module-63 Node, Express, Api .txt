@@ -1,0 +1,36 @@
+
+
+1. req  = Ashe
+   res  = pathabo 
+
+2. get	= niye asho.//
+
+3. e.target.reset()		=  form er field gula empty hoye jabe.
+
+4 useRef()			=  a React hook we use to get value from an input box.
+
+5. const id = req.params.id 	= id ke read korar jonno.
+
+6. POST AP call korbo data call korar jonno.
+
+7. const remaining = services.filter(service=>service._id !==id) ;		= 	jei id delete korsi oita baade baki gula filter out korbe.
+   setServices(remaining);
+
+ ============= Heroku Setup =====================
+
+1. process.env.PORT || 5000 ;
+
+2. script- "start-dev"
+
+3. localhost:5000/srvices
+
+
+4. terminal : ( heroku login ) 
+
+5. ( heroku create )
+
+6. ( git push heroku main )
+
+7. config vars in setting 
+
+8. 

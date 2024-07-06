@@ -1,0 +1,36 @@
+======================== Module 2 CSS  =======
+1. ID 	 = start with # , single use er khetre bebohar kora hoy.
+
+2. Class = start with . , aksathe ekadhik tag er jonno use kora hoy. 
+
+3. Border-radius = border will curve.  
+
+4. margin  = bahire(display) theke faka hobe.
+
+5. padding = margin er vitor theke jayga charbe.
+
+6. display block = majher faka jayga chole jabe.
+
+7. display inline = shob ak line a eshe porbe.
+
+================ Module 3 Git push ===============
+
+
+* In vs code click to sourse control icon to differ between pushed code and new code.
+
+
+================ Module 4 portfolio ===============
+
+
+* <a target="_blank" 	=   link will open in new tab.
+
+* Display : flex	=   shob tag pasha pashi ( flexible) boshe jabe.
+
+* text-decoration: none =   text/link er underline chole jabe. 
+
+* background-image: linear-gradient(to right ,tomato, orange ) = this is css gradient.
+
+* font-weight 		=   font bold/light kora jay.
+
+* margin-bottom		=  upor nicher content er majhe gap nibe.
+

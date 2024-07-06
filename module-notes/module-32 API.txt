@@ -1,0 +1,65 @@
+=============== module 32 ==============
+
+* API : server theke data load kore nijer website e dekhay.
+
+1. stringify
+const user = {id: 11, name: 'Aamir Kkhan', job: 'Acting'};
+
+const stringfied = JSON.stringify(user);			= object gulake string type (JSON format) kore fele.
+console.log(stringfied);
+
+* const converted = JSON.parse(stringfied);
+console.log(converted);						= convert stringify to normal object.
+
+*** stringify er prperty access/change kora jay na. Access/change korte hole nomal object ee convert korte hoy. ***
+
+*** Ctrl+L = select any webpages location. ***
+
+
+2. div.classList.add('post');					=	div er moddhe .post class ta add hoye jabe.
+
+3.HTTP Methods 
+   post : data pathaile post hoy ( nije data toiri kore server e rakha). - facebook e post kora.
+   Get  : data  receive korle get hoy.( Data Catch kora)  - facebbok e post dekha. 
+   put	: cheack korbe data ase kina, thakle ager ta change korbe na thakle notun kore add korbe.
+
+4. Status code					=	website ee 200 , 404 ai typer code dekhay.
+
+
+===================== module 33 =================
+
+1. 
+const displayBuddies = data => {
+    const buddies = data.results
+    console.log(buddies);				= for displaying Nested object. ( object er vitor result)
+}
+
+================== 33-4 =================
+
+1. 
+const loadCountryByName = name => {
+    const url = `https://restcountries.eu/rest/v2/name/${name}`
+    fetch(url)
+    .then(res => res.json())
+    .then(data => console.log(data[0])) ;			= object er index show korabe.
+}
+
+2. <img width="200px" src="${country.flag}" >			= set image dynamically.
+
+
+============== 33-6 ==============
+
+3. ${meal.strInstructions.slice(0,250)}			= dynamic text slice hoye (0-250) character er hoye jabe.
+ 								 
+
+======= 33-7 =========
+
+4. console.log(data.meals[0]) ;				= data object er vitorer meals object er vitorer 0 no. index
+
+
+========= 33-8 ============
+
+5. searchResult.textContent = '' ;			= Clear previous search result.
+					       ( click korar sathe sathe notun akta ashar age ager ta baad hoye jabe)
+
+6.

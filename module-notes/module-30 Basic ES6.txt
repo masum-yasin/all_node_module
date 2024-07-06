@@ -1,0 +1,202 @@
+
+
+1. function (num1, num2 = 0) {
+	const total = num1 + num2 ;		= (num2 = 0) means num2 er maan deya thakle seta nibe na deya thakle		return total ;	  			   default 0 nibe. Default maan change kora jabe.
+
+
+2. const multiLine = 'this is first line.\n'		= \n == line break	
+
+
+3. 
+const count = 5 ;
+const new = `<h3> class="friend-name">friend-${count}<h3>` ;		= dynamic string ${} .
+
+* const first = 'Mamun' ;
+  const last = 'Chowdhury' ;
+  const fullOld = first + '' + last ;
+  const newOld = `${first} ${last}` ;					= dynamic string.
+
+
+============ Arrow Functions ==================
+
+
+4.
+ const add3 = function (num1 , num2) {
+    return num1 + num2 ;				= function annonimus
+}
+const sum1 = add3 (15 ,17);
+
+
+5.
+const add4 = (num1 , num2) => num1 + num2 ;
+							= arrow function.						
+const sum2 = add4(15 , 17)
+
+
+6.
+const fivetimes = num => num * 5 ;
+const result = fivetimes(20);				=  single parameter
+
+7.
+const getName = () => 'Kashem Kage';
+const name = getName() ;				= without parameter
+
+8. 
+const doMath = (x, y) => {
+    const sum = x + y ;
+    const diff = x - y ;
+    const result = sum * diff ;				= multiple opration function
+    const output = result / 3 ;
+    return output ; 
+}
+const total = doMath(12,5);
+
+
+================ spread operator ================
+
+9.
+const numbers = [26, 65, 99, 21, 34] ;
+const max = Math.max(...numbers);			= array er vitorer updan gula ber kora jabe.
+console.log(max);
+
+
+* spread Operator : diye kono akta array er shob upadan ke arek jagay boshai deya jay. ***
+
+
+================= Destructuring ==============
+
+1.
+const fish = { id: 50, name: 'king Hilsha', price: 9000, phone:'01682011307', address: 'Chadpur', dress: 'silver'};
+
+const {phone, price , dress , id} = fish ;				
+console.log (id);					= distructuring method.
+
+
+* const price = fish.price ; 				= object er property kono variable er moddhe rakha jay.
+
+
+2. 
+
+const company = {
+    name : 'GP',
+    ceo : {id:1, name: 'Kashem Quraishi', food: 'money'} ,
+    web: {work: 'Website Development', employee: 22, framework: 'react' }
+} ;
+const { work, framework } = company.web ;
+const { food } = company.ceo ;
+
+
+
+3.
+const {sky , color , money} = {sky: 'blue', soil: 'matti', color: 'red', money: 420} ;
+
+*** array er distructuring korte hoile [] array dite hobe, obj er dis korte hole obj {} dite hobe.*** 
+
+
+
+
+================ chaining ==============
+
+1. const [best , faltu] = ['32', '45', '55', '63'] ;			= array onujaye chaining. first duitar er 	   console.log(best, faltu);						  pore jotoi thakuk protom duitai nibe.			   
+2. console.log(company.web.tech.third)		=	chaining
+
+								  
+3. Optional Chaining
+const myObject = {x:2, y:50, z: 600, a:25, b:68} ;
+   const {x , b } = myObject;
+   console.log(myObject?.p?.q) ;		= (p) value jodi true hoy tahole (p) er vitor jabe. 
+
+
+
+**** array[] er khetre position onujaye maan nibe.  
+*    object{} er khetre property onujaye maan nibe. ****
+
+
+=============== map (31-4) =============== 
+
+* map = Akta array er prottekta element ke niye tarder sathe kichu kore segulake arekta array er moddhe niye sei array return korbe.
+* filter = jara shorto fulfil korbe taderkei array hishebe return korbe.
+
+const numbers = [ 2 , 4 , 8 ,10 ]
+const output2 = [] ;
+
+const doubleIt = number => number * 2;
+
+
+for (const number of numbers) {
+    const result = doubleIt(number);
+    output2.push(result);
+}
+
+1.const output = numbers.map(doubleIt);				= do map by calling function
+2.const output = numbers.map(number => number * 2);		= do map by using the formula of the arrow function.
+3.const output = numbers.map( x => x * 2 ) ;			= do map by using x.
+
+4.const squares = numbers.map (x => x * x) ; 			= map of square.
+    console.log(squares);
+
+
+
+======================= More Map (31-5) ================
+
+1.
+const friends = ['Tom Hanks', 'Tom Cruise', 'tom brady', 'Tom solaiman'] ;
+
+const fLength = friends.map(friend => friend.length);		= per string er length pawa jabe.
+console.log(fLength);
+
+
+2.
+const products = [
+    {name: 'water bollte', price: 50, color: 'yellow'},
+    {name: 'Green Lanturn', price: 500, color: 'green'},
+    {name: 'Thanos', price: 5000, color: 'Purple'},
+    {name: 'Loki', price: 420, color: 'blue'},
+
+]
+const productNames = products.map(product => product.name);
+console.log (productNames);					= object er property ber kora using map.
+
+* products.map(product => console.log(product)) ;		= direct console log kore deya.
+
+* products.forEach(product => console.log(product)) ;		= map return dey, forEach return dey na.
+
+
+
+================ filter-find (31-6) ===================
+
+1. 
+const numbers = [5, 13, 7, 41, 30, 5, 2, 19] ;
+const bigNumbers = numbers.filter(number => number > 20) ;	= 20 theke boro number gula filter kore ashbe.
+
+2.
+const expensive = products.filter(product => product.price > 100 ) ;
+console.log(expensive);						= 100 takar uporer price er product gula dekhabe.
+
+3.
+const purple = products.filter(product => product.color == 'purple' );
+console.log(purple) ;						= object property er string filter kora .
+
+4. 
+const purple = product.find(product => product.color == 'purple' );
+console.log(purple);						=  filter with ( find )
+
+
+* filter = element ta ke array er modhe dibe.  na paile faka array dibe.***
+* find = just element ta ke dibe. array dibena.  na paile undefined dibe.***
+
+
+
+================== 31-7 =============
+
+1.Class
+class Support {						= class name should be upperCase
+    name ;
+    role = 'Support Web Dev' ;
+    startSession () {					= sudhu function er naam dilei hobe.
+        console.log ('start a support session') ;
+    }
+}
+
+
+2. Prototypical chain = 	Javascript e akta object theke arekta object er property gula je shared hocche seta akta chian diye kaj hoy etake prototypical chain bole.

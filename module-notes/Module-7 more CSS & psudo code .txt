@@ -1,0 +1,68 @@
+================================== Module 7-2 ===================================
+
+1. Visibility : hidden  = se tar jaygay thakbe kintu invisible thakbe.
+
+2. display : none	= the tag will be gone. 
+
+3. overflow : hidden	= overflow will be hidden.
+
+4. overflow : scroll	= overflow ta scroll kore dekha jabe.
+
+5. overflow-x: hidden;	= x axis er srolll bar gayeb hoye jabe.
+
+6. white-space : nowrap = word gula wrap hobe na.
+
+7. text-overflow: ellipsis = border shesh hoye gele .... (dot dot) diye bujhai dibe je pore aro kichu ase.
+But seikhetre ( overflow : hidden ) use korte hobe.
+
+8. transform : scale(0.5) = pura container scale onujaye choto hoye jabe.
+
+9. transform : rotate(45deg)  = container rotate hoye jabe.
+
+10. transform : translate(500px) = tag ta tar nij jayga theke 500px shore jabe.
+
+11. transform-origin : top right; = top right er ongsho thik rekhe transform hobe.
+
+12. transform : translate(10px) = container ta shore ashbe.
+
+*** CSS e ak e tag e akadhik style dile last e jei style ta lekha hobe setai kaj korbe. ***
+    kintu pasha pashi css gula lekhle shob gula kaj korbe. ((pls reconfirm ))
+
+13. transition : width 2s ; = tag er weight 2second dhore lenier vabe boro hobe.
+
+*** transition: <property> <duration> <timing-function> <delay>; ***
+
+14. Float : left = shob container serial by left e chole ashbe.
+
+15. max-height: 400px; = container/tag er height 400px er beshi hobe na, jodio er vitorer lekha ber hoye jay tar poreo.
+
+16. cursor: grab
+    cursor: zoom-in  = eshob use korle mouse cursor change hoy.
+        etc. 
+
+17. Psudo code ::
+
+* <blockquote>		=	this tag is used for quote lines.
+
+
+* blockquote::before {
+        content: open-quote/close-quote;	= shob <blockquote> tag er age open/close quote use hobe.
+        font-size: 1.5em;			  content: ''; = ai property psudo te always use kortei hobe.			}
+
+
+* h2::after,before {
+        content: '';		= ai property psudo te always use kortei hobe.
+        height: 2px;		= height/width underline or upperline korar jonno use kora hoyeche.
+        width: 100%;
+        display: block;		= full display use korbe.
+    }
+
+* h2:inline-block		= tar jetuku content setuku jayga nibe. (like inline eliments)		
+          
+
+
+
+
+
+
+

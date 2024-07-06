@@ -1,0 +1,130 @@
+
+1. ========================== React Setup ===========================
+
+1. npx create-react-app folder-name
+2. npm start
+3. npm i react-router-dom
+4. npm i firebase
+5. npm install react-hook-form
+
+  ==================================================================
+
+
+
+============================= React setup with Vite==================
+1. npm create vite@latest
+2.npm i
+3. npm run dev
+
+====================================================================
+
+
+
+
+2. ======================== firebase Deploy ===========================
+1. npm install -g firebase-tools (one time for one pc)
+2. firebase login
+3.firebase init ( one time for every project ) 
+1. npm run build
+2. firebase deploy
+
+   =================================================================
+
+
+
+
+
+3.  =========================== Server Setup ==========================
+
+*  npm install -g nodemon  ( onetime )
+1. npm init -y
+2. npm i express cors mongodb dotenv
+3. create and edit index.js & package.json 
+4. nodemon index.js
+
+    ================================================================
+
+
+
+
+
+
+4.  =========================== Server Deploy =========================
+
+/*
+one time:
+1. heroku account open
+2. Heroku software install
+Every project
+1. git init
+2. .gitignore (node_module, .env)
+3. push everything to git
+4. make sure you have this script:  "start": "node index.js",
+5. make sure: put process.env.PORT in front of your port number
+6. heroku login
+7. heroku create (only one time for a project)
+8. command: git push heroku main
+----
+update:
+1. save everything check locally
+2. git add, git commit-m", git push
+2. git push heroku main
+*/
+
+  =======================================================================
+
+
+
+ 
+5. ================================== FireBase Setup =======================
+
+/*
+steps for authentication
+----------------
+Step-1: Initial Setup
+1. firebase: create project
+2. create web app
+3. get configuration
+4. initialize firebase
+5. Enable auth method
+------------------
+Step-2: setup component
+1. Create Login Component
+2. Create Register Component
+3. Create Route for Login and Register
+------------------------
+Step 3: set auth system
+1. set up sign in method
+2. setup sign out method
+3. user state
+4. special observer
+5. return necessary methods and states from useFirebase
+---------------------
+Step 4: create auth context hook (useAuth)
+1. create a auth context
+2. Create context Provider
+3. set context Provider context value
+4. use Auth Provider in the app.js
+5. create useAuth Hook
+---------------------
+Step 5: create private route
+1. create private Route
+2. set private route
+------------------
+Step-6: Redirect after login
+1. after login redirect user to their desired destination
+*/
+
+
+
+
+======================= GitHub repo ( Private to public ) =======================
+
+1. git clone --bare < private repo link >		= first make a new folder
+
+2. git push --mirror < public repo link >		= into the .git folder (first create a new repo)
+
+3. git remote set-url origin < public repo link >	= do this in the orginal coded file
+
+
+**** git remote -v  =  cheak fetch path ****

@@ -1,0 +1,8 @@
+1. Redux er 3 part ( 1.Action 2.Store 3.Reducer )
+
+2. Reducer
+
+ function bookreducer (state, action) {			= 	state = as like as react state
+
+
+}

@@ -1,0 +1,121 @@
+1.  Double(==) vs Thriple(===) 
+=>	Double equal cheak kore duita maan shoman kina, se data type cheack kore na.
+	Thriple equal cheak kore duita maan shoman kina, but se strickly data type cheack kore.
+
+
+
+2. Block scope : 
+is declared with {} curly bracket. const and let is block scope. It has accessibility only inside the curly bracket.
+* let and const hoisting hobe na, Var hoisting hobe. Kono variable er age var/let/const na dile seta global variable hoye jay.
+
+
+3. React Hooks:  They let you use state and other React features without writing a class.
+The state is an updatable structure that is used to contain data or information about the component and can change over time.
+
+
+4. conditional Rendering
+
+*   {cart.length == 0 && <p> No Items Selected </p>  }							= show only one condition
+ 
+*   {cart.length == 0 ? <p> No Items Selected </p> : <span> Items Selected {cart.length}   </span> } 	= if else condition
+
+*   {cart.length !== 0 || <span> No Items Selected </span> }						= if not true then show 
+
+
+5. conditional CSS
+
+* <h1 className={cart.length == 0 ? 'red': 'blue'}> Cart Menu </h1>					= 0 == red / blue 
+
+* <p className={`bold bordered  ${cart.length == 3 ? 'red' : 'blue' } `}> select some Item </p>		= multiple conditional css
+
+
+
+6. Context API
+
+*step-1 =>  	export const GoldRing = createContext('Gold');	
+
+*step 2 =>	<GoldRing.Provider value='Golden Ring'>					=> value = '' ekhane jeknoo data pathano jabe. object, array, string.
+                
+           	<Father dRing={dRing}>  </Father>
+
+            	</GoldRing.Provider>	 
+
+
+* step 3 => 	const angti = useContext(GoldRing) 					=> access the value
+
+
+
+
+
+
+7. Local Storage
+const newQuantity = localStorage.getItem(id,newQuantity ); 				= id = key, newQuantity = value ;
+
+
+
+8.JSON.stringify() 
+Convert a JavaScript object into a string with JSON.stringify(). When sending data to a web server, the data has to be a string.
+
+
+9. JSON.parse()
+When receiving data from a web server, the data is always a string. Parse the data with JSON.parse(), and the data becomes a JavaScript object.
+
+
+  
+
+=============== use Context =====================
+
+1. create Context & AuthProvider
+
+import { createContext } from "react";
+
+export const AuthContext =  createContext(null);
+
+const sampleData = 'kiremama' ;
+
+const AuthProvider = ({children}) => {
+    return (
+        <AuthContext.Provider value={sampleData}>
+            {children}
+        </AuthContext.Provider>
+    )
+}
+
+export default AuthProvider ;
+
+
+2. wrap the Authprovider in main.js
+
+  <React.StrictMode>
+    <AuthProvider>
+    <RouterProvider router={router}></RouterProvider>
+    </AuthProvider>
+  </React.StrictMode>,
+
+
+3. get the data in your component 
+
+const Register = () => {
+
+  const sampleData = useContext(AuthContext)
+  console.log(sampleData);
+
+
+===================================================
+
+
+
+================= Hooks ===============
+
+1.  UseEffect e [] dependency array use kora hoy karon er vitor jei value deya hoy oitar state jodi change hoy then useEffect abar run korbe.
+
+
+
+
+
+
+
+=========  EKT  ===============
+ Set domain in fb page		= https://www.facebook.com/settings/?tab=advanced_messaging
+
+

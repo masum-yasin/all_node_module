@@ -1,0 +1,69 @@
+================== Module (8-2) Flexbox ========================
+
+1. display: flex
+   justify-content: space-evenly  =  content gula display er moddhe shoman shoman jayga vaag kore nibe.
+   justify-content: center	  =  full contailer/ display er center e eshe porbe.
+
+2. align-items: flex-end	=  container er nich theke vertically align hobe.
+   align-items: center		=  (up-down) vertically full display/contailer er center e boshbe.
+   align-items: stretch		=  height/width fix na thakle vertically full container vore stretch hoye jabe.	  
+
+****   justify-content: xxx = horizontal (left-right) vabe align hobe.  *****
+****   align-items    : xxx = vertically (up-down) align hobe.  *****	
+
+
+4. font-size: 3em  = default font size er 3X beshi.
+
+5. flex-grow: 1	   = aita jei tag e use kora hobe se display/container er baki faka jayga gula niye nibe. But baki tag gula tar fixed height/width niyei thakbe.
+
+6. #box-1 {order: 2 ;} = 
+   #box-1 {order: 1 ;} =     box gular style shuffle hoye jabe.
+
+7. input type="email" name="email" id="" placeholder="Enter email" required = aikhane required dewa mani form puron kora chara submit hobe na.  
+
+8. flex-direction: column	=  flex display ta column akare hoye jabe.
+
+*  flex-direction: column-reverse = reverse hoye jabe
+
+9.  display: flex
+    flex-wrap: wrap 		= div tar height/wight thik rekhe porer line e chole jabe.
+
+
+=========================== Module 8-4 (Grid Layout)=======================
+
+
+9. display:grid 
+   grid-template-columns: 200px 200px 150px	=  3ta px er maan onujayi 3ta column hoye jabe.( 3ta PX er jagay kom/beshi use kora jabe)
+   
+   grid-template-columns: repeat(4,200px)	= 4ta column hobe, prottekta 200px kore.
+
+   grid-template-columns: repeat(4,1fr)		= 4ta column ak frame e/ full display te shoman vaage vag hoye jabe. aita display er full wigth niye ney.
+	
+   grid-template-columns: repeat(4,1fr) 200px = grid template er first part ta 4:1 & second part 200px thakbe.
+   grid-template-columns: repeat(4,1fr) 2fr   = first part ta 4:1 & second part ta tar double jayga niye hobe.
+   
+10. grid-gap: 20px	=	grid er column er majhe gap hoye jabe.
+
+11. grid-gap: 40px 10px	=	40px gap in column(up-down), 10px gap in row( left-right).
+
+13. @media (max-width: 700px) {.class {} } =  width 700px ba tar kom porjonto ai style ta kaj korbe.
+
+14. @media (max-width: 700px) {.class {} } = width 900px ba tar beshi hoile ai style ta kaj korbe.
+
+**** ABSOLUTE position ke atkanor jonno RELATIVE position use kora jay. ****
+
+15.
+*   display: flex
+    flex-wrap: wrap 		= div tar height/wight thik rekhe porer line e chole jabe.
+
+*  position: relative		= tar nijer jaygar onuhsare shorbe.
+   left: 50px		
+
+*  position: absolute 		= tar parent tag er jaygar onushare shorbe. jodi parent tag er position set na
+   left: 50px			  kora thake tahole body er onushare boshe jabe.
+
+ 
+
+
+
+

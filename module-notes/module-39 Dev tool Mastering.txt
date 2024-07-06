@@ -1,0 +1,49 @@
+1. Accessibility : When websites and web tools are properly designed and coded, people with disabilities can use them.
+
+2. monitor(functionName)			= function ke monitoring kora jay. only works in Browser console.
+
+3. unmonitor(functionName)			= the functionm will be unmonitored.
+
+*** devtool console api *** 			= Documentation
+*** devtool console api utilities ***
+
+4. Ctrl + G 					= take you to your wanted line.
+
+5. Ctrl + Shift + O				= show all the Functions
+
+================== 40 =============
+
+6. debug(functionName)				= function e automatic brakePoint niye nibe.
+
+7. Ctrl + Shift + T				= Closed Tab will The Return.
+
+8.
+  * const myName = ''
+    !myName = true
+						= variable True / False examples 
+  * const myName2 = 'kashem'
+    !myName2 = false  
+
+9. console.table(data, ['name' , 'salary'])	= data object er name & salary column duita table e show korbe.
+
+10. Array.isArray(data)				= data ta array kina cheack korbe.
+
+
+=================== 40-8 Regular expression =======================
+
+
+11. /[A-Z]/.test(myPassword)			= myPassword variable er moddhe A-Z ase kina cheack korbe.
+
+
+12. /[0-5]/.test('today20')			= string er moddhe 0-5 ase kina cheach korbe.
+
+
+====================== 43.5 Debug Bonus ==========================
+
+14. 
+const imgElement = document.getElementById('img-slider') ;
+const imgUrl = images[imgIndex];
+imgElement.setAttribute('src', imgUrl)			   = img er attribute ta hobe src & src er maan hobe imgUrl.
+
+
+15.

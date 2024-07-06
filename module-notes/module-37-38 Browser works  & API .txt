@@ -1,0 +1,113 @@
+1. Dom tree + Style structure = Render tree 
+
+2. Render tree => paint => Display.
+
+3. Browser V8 Engine er Just In Time (JIT) compiler diye javascript execute kore.
+
+===================== 37-4 SetTimeout Asynchronus ====================
+
+4. setTimeout(myFunction)			= shob kaaj shesh call korbe . 					  					  	  
+
+5. setTimeout(myFunction, 5000)			= Set the time. ( 5 sec por aita kaj korbe ). 
+
+
+6. setTimeout(function(){
+console.log('I am doing Code')			= put directly anonimous function.
+} ,5000)
+
+
+7. setTimeout( () => {
+console.log('This is an arrow function')	= put directly Arrow function.
+} ,5000)
+
+
+8. fetch Asynchronous way te kaj kore. (fetch er data load hote late hole porer kaaj gula kore fele then fetch kore)
+
+
+================= 37-6 ( setInterval and clearInterval ) =================
+
+9. setInterval(()=>{
+console.log('third')				= shobar shesh e kaj korbe but 3 sec por por aaitar kaj hotei thkbe.
+, 3000})
+
+
+10.  
+const timeId = setInterval(() => {
+  console.log(Math.round(Math.random()*10))
+  if (seconds > 15) {
+    clearInterval(timeId);			= turn off the setInterval using clearInterval with condition.
+  }
+}, 1000);
+
+
+====================== 38-2 Alert/Confirm/Prompt  ====================
+
+1.
+const askPicnic=()=>{
+    const result = confirm('are you going to pinic ?')		= browser er console e confirm er result show korbe.
+    console.log(result) ;
+}
+
+
+2.
+const askPicnic=()=>{
+    const result = confirm('are you going to pinic ?')
+    console.log(result) ;
+    if (result === true) {
+        alert('TK de joldi joldi');				= confirm er feedback onujaye alert deya using ifElse 
+    }
+    else{
+        alert('gaho rama akha');
+    }
+}
+
+
+3.
+const askName=()=>{
+    const name = prompt('Type your name...')			= use prompt for input value. 
+    console.log(name);
+}
+
+
+================= 38-3 Location,URL ================
+
+4. 
+const reload = () => {
+            location.reload();				= current url location ta reload hobe.
+        }
+
+5.
+const MyPage = () => {
+location.assign('https://www.rockstargames.com/')	= ai url e assaign kore niye jabe.
+}  
+
+
+6. Search Query :  url e ? er por jetuku thake take Search Query bole.
+
+*** kono video/YouTube er url er last e ( &=500s ) add kore dile video 500 seconds por start hobe. ***
+
+
+================= 38-4 History api ============
+
+7. history.back()			= browser er console ee likhle history show korbe.  
+   history.forward()
+   history.go(-3)			= joto step back e jete chai.
+   history.go(4)			= joto step forward e gesilam seta dekhabe.
+
+
+================== 38-5 Cookies ========================
+
+8. document.cookie			= see a website's cookie in console. 
+
+9. Cookies er data gula server e pathano jay. 
+   Local / session storage er data gula server e pathano jayna, ogula browser ei thake. 
+
+
+
+
+*** document.body.contentEditable = true *** 			= change text of any website in Console.  
+
+
+
+
+

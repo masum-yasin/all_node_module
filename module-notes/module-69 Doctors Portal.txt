@@ -1,0 +1,60 @@
+
+1. style={{margin: '0 auto'}}		= margin top-bottom = o , left-right = auto .
+
+2. date.toDateString()			= date ta string e convert hoye jabe.
+
+
+3. handleOnChange()
+
+ const handleOnChange = e => {
+        const field = e.target.name ;				= field er name target kore value nibe. 
+        const value = e.target.value ;				
+        console.log(field , value);
+}
+
+	<TextField id="standard-basic" label="Your Email" variant="standard" name="email" onChange={handleOnChange}>
+
+	<TextField id="standard-basic" label="Your Email" variant="standard" name="password" onChange={handleOnChange}>
+
+
+
+4.  
+  const [loginData, setLoginData] = useState({})
+
+    const handleOnChange = e => {
+        const field = e.target.name;
+        const value = e.target.value;
+        const newLoginData = { ...loginData } ;		= copy all state loginData in NewLoginData .
+        newLoginData[field] = value ;			= jei field e type kortesi oita nicche & update kore dicche.
+        setLoginData(newLoginData) ;			= field ta set hoye jabe.
+    }
+
+
+6. turnery operator condition. 
+
+	{ !isLoading && <div> } 			= isLoading na thakle div show korbe.
+
+	{ isLoading && <spinner> }			= isLoading thakle spinner show korbe. 
+
+
+7. toLocalDateString
+ 
+ const d = new Date()
+ d.toLocalDateString 			= just date ta dibe. ( full date details ar dibe na ) 
+
+
+
+
+8. Server 
+
+* insert a document					=  send data/ data website theke server e pathabo.
+
+* app.get('/users')					=  shob users der pabo.
+
+* app.post('/users')					=  user ke add korbe / add new user. ( send data from client to server )
+
+* app.get('/users/:id')					= specific akjon ke pabo/nibo.
+
+* app.put('/users/:id')					= specific akjon ke update korbe.
+
+* app.delete('/users/:id')				= specific akjon ke delete korbe.

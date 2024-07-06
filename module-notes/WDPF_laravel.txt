@@ -1,0 +1,333 @@
+				========================= Laravel ==============================
+
+
+===================== install process =======================
+** enable intl, zip , curl extentions in php.ini
+
+
+1. composer create-project laravel/laravel:^8 project1 		= install laravel project v8
+   composer create-project laravel/laravel:^10.0 example-app 	= v10
+2. php artisan serve						= run project
+3. composer install						= get your packages ( like node modules )
+4. composer require 
+5. 
+
+
+
+
+
+* run Laravel		= php artisan serve
+
+* make controller	= php artisan make:controller AboutContoler 
+
+* make model with table	= php artisan make:model Product -m	
+
+
+* migration				= php artisan make:migration products1_migration;
+* make migration table			= php artisan make:migration create_admins_table
+* run migration (make the table in db)	= php artisan migrate
+* make migration table with model	= php artisan make model ModelName -mr
+* drop and fresh			= php artisan migrate:fresh
+* role back and refresh. 		= php artisan migrate:refresh
+
+* make cors		= php artisan make:filter Cors
+
+* make seeder			= php artisan make:seeder UserSeeder
+* run seed			= php artisan db:seed
+* run exact seeder		= php artisan db:seed CategorySeeder
+* make seed and migrate together	= php artisan migrate --seed
+
+
+* see route lists		= php artisan route:list
+* make auto methods for controller and models	 = php artisan make:model Category -mcr
+
+* copy env file			= copy .env.example .env
+				= php artisan key:generate
+
+=================== seed =======================
+** call the seeders in DatabaseSeeder.php
+        $this->call(UserSeeder::class);
+        $this->call(AdminSeeder::class);
+        $this->call(CategorySeeder::class);
+        $this->call(ProductSeeder::class);
+
+
+**. enable the model  User::factory(10)->create() in DatbaseSeeder.php .
+ then run cmd  = php artisan db:seed 
+
+
+
+================= Enable Debugger ===================
+		
+*** composer require barryvdh/laravel-debugbar --dev		= enable debugger
+
+
+
+===================================
+
+
+***     public function store( Request $req ){			= Request is a object which passes its data to a parameter $req.
+        echo $req->email ;
+    }
+
+
+*** value="{{ old('subject') }}"				= get the written value  in your input field
+
+
+***        $messages = [
+            'name.required' => 'Naam koi ??',
+            'subject.required' => 'Subject den vai please',	= field required na thakle ai msg
+            'subject.min' => 'Subject er length barao',		= field er minimum value na dile ai msg.
+        ] ;
+
+
+
+***  DB::table('categories')->insert($data); 			= connect with db directly without model
+
+
+
+*** old()	= value="{{ old('name', $product['name']) }}"	= $product['name']( comes from database ) jodi na thake then old('name') (summitted data)
+			   
+
+================================== Authentication ================================
+
+1. make middlewire = ** php artisan make:middleware userAuthentication
+2. use middlewire class ( userAuthentication ) in kernel.php, use userAuth middlewire in desired route
+3.
+
+
+================================ multiple auth =============================
+
+
+
+1. Migration for Admin		= php artisan make:migration create_admins_table
+				= php artisan migrate
+				
+
+2. Make Model for Admin		php artisan make:model Admin
+				= create Admin model as like User model.
+	
+3. create a admin guard & admin provider in auth.php/config
+
+4. create middleware				= php artisan make:middleware admin , make a condition
+make admin middleware in kernel.php		= 'admin' => \App\Http\Middleware\Admin::class,
+
+5. make controller				= php artisan make:controller AdminController
+   make routes for the contorller		
+   make view file for the routes
+   make store method from auth.php/route -> AuthenticatedSessionController in your AdminController
+
+
+6. ( optional ) make seeder.			= php artisan make:seeder AdminSeeder
+
+seeder/AdminSeeder.php =>
+	 DB::table('admins')->insert([
+            'name' => 'admin',
+            'email' => 'admin@gmail.com',
+            'password' => Hash::make('password'),
+            'status' => '1',
+        ]);
+
+						= php artisan db:seed AdminSeeder
+
+
+
+
+=============================== Relational database Tables ===================================
+
+https://laravel.com/docs/10.x/eloquent-relationships
+
+
+
+
+***    public function category(): BelongsTo
+    {
+        return $this->belongsTo(Category::class, 'foriegnKey_id');		= give your forign key id table field name.
+    }
+
+
+*** categories , id = category_id 	 ( left side is primary key, right side is foreign key ) { if you want to connect automatically relationship }.
+
+
+
+
+
+========================== Search =====================
+https://www.itsolutionstuff.com/post/laravel-10-scout-full-text-search-tutorialexample.html
+
+
+========================== add to cart ===================
+https://www.itsolutionstuff.com/post/laravel-shopping-add-to-cart-with-ajax-exampleexample.html
+
+
+
+============================ laravel traits ==================
+https://onlinewebtutorblog.com/how-to-use-trait-in-laravel-10-example-tutorial/
+
+
+============================ laravel spatie role and permission ===========
+https://www.allphptricks.com/simple-laravel-10-user-roles-and-permissions/
+
+
+
+=============================== laravel react crud =========================
+https://www.nicesnippets.com/blog/laravel-10-react-crud-example-tutorial
+
+
+
+=============================== laravel add to cart ========================
+https://github.com/abdulaziz-m5u/ecommerce-youtube
+
+
+
+
+
+=============================== laravel Vue inertia ===========================
+https://larainfo.com/blogs/laravel-10-inertia-vue-3-crud-operation-example
+
+
+
+
+**** for frontend ****
+
+0. php artisan breeze:install react
+1. inertia install for client side 		= npm install @inertiajs/react
+2. 
+
+
+
+
+
+
+
+
+
+
+=============== queries ==========
+1. what is middleware , why ? 
+2. scope resulation ::  , $this , OOP, public, private, protected
+3. Collect inteview questions and study them
+
+public 	= can be accessed by all
+private = 
+
+
+
+
+
+
+
+/* styles.css */
+.container {
+    @apply mx-auto max-w-screen-xl;
+  }
+
+
+.center {
+    @apply flex justify-center items-center;
+  }
+
+
+<div class="grid grid-cols-1  lg:grid-cols-4">
+<div class="col-span-1 lg:col-span-1">
+
+
+** To do  for project**
+1. make trigger for category X product
+2. delete , edit for item 
+
+
+
+
+* API = nijer software/data system er jonno onno kono existing software/ datasystem bebohar korake API (Application Programming Interface) bole.
+* API is like a connector that connects User with Owner ( pathao - Google Map ). It takes the request from user, make the request to the owner and gives only the data that the user needs. ( like->  Customer -- waiter with food -- kitchen )
+
+
+
+
+
+
+**** for frontend ****
+
+0. php artisan breeze:install react
+1. inertia install for client side 		= npm install @inertiajs/react
+2. 
+
+
+
+
+
+
+
+
+
+
+=============== queries ==========
+1. what is middleware , why ? 
+2. scope resulation ::  , $this , OOP, public, private, protected
+3. Collect inteview questions and study them
+4. History() location in laravel
+
+
+https://medium.com/@khayrulalamdict
+
+
+public 	= can be accessed by all
+private = 
+
+
+
+
+
+
+
+/* styles.css */
+.container {
+    @apply mx-auto max-w-screen-xl;
+  }
+
+
+.center {
+    @apply flex justify-center items-center;
+  }
+
+
+<div class="grid grid-cols-1  lg:grid-cols-4">
+<div class="col-span-1 lg:col-span-1">
+
+
+
+========= OOP Concept ==========
+class, object, method, ingheritance, polimorphism, overloading, method chainnig, constructor, destructor, cloaning, serializing, interface, abstract
+
+static method and  static property 
+
+
+
+Autoload: 
+jotogula class thakuk na keno ami jei class ke call korbo sei class call hoye jabe. Class name , file name same hoite hobe. ( shob unction ak sathe run hole site er load bere jay. jar karone autoload use kora hoy, jei method er kaj taake call korle sei method run hoye jabe. )
+
+
+Final: Final keyword use korle kichu change kora jay na , inheritence kora jay na.
+
+
+
+# __Construct()
+The constructor is a special method in PHP classes that is automatically called when an object of the class is created using the new keyword.
+
+
+# __desctruct()
+When the object goes out of scope or is manually destroyed ( unset the object ) then the destruct function will be automatically called. But in php it has an automatic guarbage system so we don't need to use destruct often.
+
+
+# inheritence
+
+it means uttorshori(successor).
+
+
+
+
+
+
+
+

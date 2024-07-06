@@ -1,0 +1,13 @@
+============================ Vue JS ============================
+
+
+1. scoped 
+<style scoped>
+.example {
+  color: red;			= using scoped will make the css only available for this page.
+}
+</style>
+
+
+
+2.

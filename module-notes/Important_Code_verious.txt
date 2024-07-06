@@ -1,0 +1,20 @@
+**********************************************************svg Map file red color  hover the district name**************************************
+
+<script>
+        $(document).ready(function() {
+    // Store the original fill color
+    $(".svg-hover").each(function() {
+        $(this).data('original-fill', $(this).css('fill'));
+    });
+
+    $(".svg-hover").hover(function() {
+        // On mouse enter, change the fill color to red
+        $(this).css("fill", "red");
+    }, function() {
+        // On mouse leave, revert the fill color to the original color
+        var originalColor = $(this).data('original-fill');
+        $(this).css("fill", originalColor);
+    });
+});
+
+    </script>

@@ -1,0 +1,29 @@
+	<===============Lecture-1,2 =============> 
+
+* Ryan Dahl is the creator of nodeJS.
+
+* Runtime hocche JS file ta V8 engine jei khane execute kore taake runtime bole.
+
+* DOM => is a tree of object. jekhane akta web page er shob element thaake.
+
+*NodeJS is a Javascript Runtime, powered by chrome's V8 engine jeta browser er baireo web server eo run korte pare.
+
+* Nodejs single thread hishebe kaaj kore.
+
+
+	<===============Lecture-3 =============> 
+
+1. NPM er bad side hocche security Issue.
+
+2. Yarn hocche NPM er well optimized version.
+
+3. some Essential VS code Extensions: 
+
+* Airbnb : for js style guide.
+* Plugins: ESlint, Prettier
+
+
+	<===============Lecture-4 =============> 
+
+1. browser er (window) er moto node js er (global) kaaj kore. Node js e (window) kaaj korena.
+

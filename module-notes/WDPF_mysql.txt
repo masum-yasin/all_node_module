@@ -1,0 +1,923 @@
+
+
+1. mysql -h localhost -u root -p
+
+2. SHOW DATABASES;;   {sob database show hoy}
+
+3. use database; {nirthisto database use kora jye}
+
+4. create database wdpf_55;
+
+5. SHOW TABLES; (database er moddhe koto ta table ase ta show kre)
+
+6. DESC students; (ae command er maddhome table er datatype dekha jye)
+
+
+
+
+CREATE TABLE user1 (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    adddress VARCHAR(150)  NULL,
+    phone VARCHAR(20) NOT NULL,
+    dob DATE
+    )
+	ENGINE=INNODB ;
+
+
+
+
+================================== INSERT INTO========================================
+
+
+1.INSERT INTO users (id, name, address, phone, dob) VALUES (
+	NULL, 'Masum', 'Jatrabari', '0156541695', '1996-05-03'
+)
+2. INSERT INTO students VALUES(101, 'Raul'); (table er nirdisto id er data insert)
+3. INSERT INTO mycontact(fname,email)VALUES('khayrul Alam Rayan', 'example@gmail.com');
+
+
+================================= select ===================================
+
+1. SELECT * FROM user1;    (nirdisto Table er All Data View)
+
+2. SELECT id, name, address, FROM user1;   (nirdisto Table er Column  Data View)
+
+3. SELECT emp_id, name FROM employees WHERE emp_id = 1; 
+
+
+================================== UPDATE ====================================
+
+1. UPDATE students SET name = 'Tasmia', city = 'Barisal', class = 'Honours 3rd' WHERE name = 'roksana';
+
+2. UPDATE students SET name = 'Tasmia', city = 'Barisal', class = 'Honours 3rd' WHERE id = '2';
+
+
+============================== Delete ===================================
+
+
+1. DELETE FROM students WHERE id = 6; (Delete Single Id)
+
+2. DROP TABLE students; (Pura Table Delete Hoye Jabe)
+
+3. ALTER TABLE TRUNCATE students (Table thake jabe kintu table er bitore er data delete hoye jabe)
+
+mysql -h localhost -u root -p
+show databases;
+create database wdpf55_test;
+show databases;
+use wdpf55_test;
+DROP DATABASE wdpf55_test;
+show databases;
+use php_oop_crud;
+show tables;
+describe members; // table
+
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(50) NOT NULL,
+  address VARCHAR(200) NULL,
+  phone VARCHAR(20) NOT NULL,
+  dob DATE	
+) ENGINE=INNODB;
+
+
+
+//INSERT Query into table
+INSERT INTO users (id, name, address, phone, dob) VALUES (
+	NULL, 'Masum', 'Mirpur', '0147523698', '2015-05-03'
+)
+INSERT INTO users VALUES (
+	NULL, 'Rojoni', 'Mirpur', '0147523698', '2015-05-03'
+)
+
+
+
+//SELECT Query
+SELECT * FROM users; // all fields
+SELECT id, name, address FROM users; // selected fields
+
+================================== Alter =================================
+
+1. ALTER TABLE Customers
+   ADD Email varchar(255);  					= add column.
+
+
+2.  ALTER TABLE persons
+    CHANGE COLUMN email email_address VARCHAR(50) ;		= rename column.
+
+
+
+
+3. CREATE TABLE Orders (
+    orderID INT PRIMARY KEY AUTO_INCREMENT,
+    orderNumber INT NOT NULL,					= make relation with primary and foreign key.		
+    personID INT NOT NULL,
+	FOREIGN KEY (personID) REFERENCES persons(PersonID)
+    
+    );
+
+4. ALTER TABLE employees ADD COLUMN salary INT NOT NULL DEFAULT 25000; (kono table a column add krte chile ae command dite hoy)
+
+5. ALTER TABLE contact2 DROP COLUMN city (kono table a column remove krte chile ae command dite hoy)
+
+6. ALTER TABLE contact2 CHANGE mobile email VARCHAR(11); [kono table er fild naam Rename ae command er maddhome krte hoy]
+
+7. ALTER TABLE contact2 RENAME TO MYcontact;  [kono table er naam Rename ae command er maddhome krte hoy]
+
+8. ALTER TABLE mycontact ADD COLUMN fname VARCHAR(20), ADD COLUMN lname VARCHAR(20); [multiple column add krte ae command lage];
+
+9. ALTER TABLE mycontact MODIFY email VARCHAR(20) DEFAULT "unknow";
+
+10. ##### UNIQUE or No duplicate #######
+	ALTER TABLE persons						= make column unique
+	ADD UNIQUE(email_address);
+
+
+11.CREATE TABLE Persons1 (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    City varchar(255) DEFAULT 'Dhaka'
+);
+
+
+
+================================== RelationShip =================================
+
+
+CREATE DATABASE databasename;
+
+#### Relationship  ##############
+CREATE TABLE orders (
+   orderid INT PRIMARY KEY AUTO_INCREMENT,
+    ordernumber INT NOT NULL,
+    personid INT NOT NULL,
+    FOREIGN KEY (personid) REFERENCES persons(PersonID)
+);
+
+ ######### Many to Many Raltionship ########
+
+1. SELECT student_name, course_name FROM students JOIN student_course ON student_course.student_id = students.id
+JOIN courses ON student_course.course_id = courses.id;
+
+ ######### find out no. of the students #########
+
+2. SELECT student_name, COUNT(course_name) FROM students JOIN student_course ON student_course.student_id = students.id
+JOIN courses ON student_course.course_id = courses.id GROUP BY student_name;
+
+	######### find out sum  of the students #########
+ 
+3. SELECT student_name, SUM(fees) FROM students JOIN student_course ON student_course.student_id = students.id
+JOIN courses ON student_course.student_id = courses.id;
+
+
+
+
+
+
+
+
+CREATE INDEX fnameindex
+ON persons(FirstName)
+
+SELECT * FROM employees
+
+SELECT `employeeNumber`, `lastName`, `firstName`, `email` FROM `employees`
+
+SELECT `employeeNumber`, `lastName`, `firstName`, `email`, jobTitle FROM `employees` WHERE employeeNumber=1056; 
+
+SELECT `employeeNumber`, `lastName`, `firstName`, `email`, jobTitle FROM `employees` WHERE lastName='Patterson'; 
+
+SELECT `employeeNumber`, `lastName`, `firstName`, `email`, jobTitle FROM `employees` WHERE jobTitle='Sales Rep'; 
+
+SELECT DISTINCT officeCode FROM `employees`; 
+SELECT * FROM `employees` WHERE officeCode='1'
+
+SELECT * FROM `employees` WHERE officeCode='1' OR officeCode='2'; 
+
+SELECT * FROM `employees` WHERE officeCode BETWEEN 1 AND 3;
+
+SELECT * FROM `employees` ORDER BY employeeNumber desc; 
+
+UPDATE employees SET lastName='Ahmed', firstName='Masum', email='masum@gmail.com' WHERE employeeNumber=1002
+
+
+
+
+
+===============================================Limit data ==================================================
+
+
+$sql = "SELECT * FROM Orders LIMIT 30";			= data will show first 30 record
+
+$sql = "SELECT * FROM Orders LIMIT 10 OFFSET 5";	= prothom 5 ta baade porer 10 ta dekhabe.	
+
+	SELECT * FROM employees LIMIT 3, 3; (3 bade 4 theake suro hbe 3 ta id er data dekhabe)
+
+	SELECT * FROM employees ORDER BY salary DESC LIMIT 3; (descending order a top 3 salary show kora holo)
+
+
+
+
+
+========================================MYSQL JOINING ============================================
+
+********* two othoba tar beshi table er column and row  data user junno view korar junno Join kora hoy table er moddhe **********
+
+1. cross Join 
+2. Inner Join 
+3. Left Join
+4. Right Join
+
+ ==========================================Corss Join====================================================
+
+(1) * cross Join (Every row from one table is combind with every row from another table)
+  Example Command : SELECT * FROM customers, orders;
+
+
+
+ ==========================================INNER JOIN====================================================
+
+(2) * Inner Join (returens only the rows where there is a match condition between the specified columns in both the left and right side of two and another table)
+
+      Example Command: SELECT * FROM customers INNER JOIN orders ON orders.cust_id = customers.cust_id;  (donota id jodi match hoy than data view hbe)
+
+   * SELECT name FROM customers INNER JOIN orders ON orders.cust_id = customers.cust_id GROUP BY name;  (inner join a name gula ana hoy).
+
+   * SELECT name, SUM(amount) FROM customers INNER JOIN orders ON orders.cust_id = customers.cust_id GROUP BY name; (group by er maddhome total amount and name ana hoy)
+
+* SELECT author_name, ratings, CASE WHEN IFNULL(ratings, 0)>=5 THEN 'Best' WHEN IFNULL(ratings, 0)>=6 THEN 'Good' ELSE "Average" END AS remark FROM authors INNER JOIN book ON book.author_id = authors.author_id;
+
+  ==========================================LEFT JOIN====================================================
+
+  ********** Returns Alll rows from the left table and the matching rows from the right table ***********
+
+    NOTE: INNER JOIN and LEFT JOIN same tobe difference holo inner join je data entry kora hoy nai ta ase nah. left join...a je data entry kora hoy nai ta Null value      ase.; 
+
+   * SELECT * FROM customers LEFT JOIN orders ON orders.cust_id = customers.cust_id;
+
+   * SELECT name, SUM(amount) AS Total FROM customers LEFT JOIN orders ON orders.cust_id = customers.cust_id GROUP BY name;
+
+   *SELECT author_name, IFNULL(title,'NOT FOUND'), IFNULL(ratings, 0) FROM authors LEFT JOIN book ON book.author_id = authors.author_id;
+
+   ==========================================RIGHT JOIN====================================================
+
+   ********* Returns all rows from the right table and the matching rows from the left table *************
+
+   * SELECT * FROM customers RIGHT JOIN orders ON orders.cust_id = customers.cust_id;
+
+   * SELECT name, SUM(amount) AS Total FROM customers RIGHT JOIN orders ON orders.cust_id = customers.cust_id GROUP BY name;
+
+     ==========================================ON DELETE CASCADE ====================================================
+	
+	*** CREATE TABLE orders(		= ae command er maddhome foreign key make krle sohoje delete kora jye.
+    ord_id INT AUTO_INCREMENT PRIMARY KEY,
+    date DATE ,
+    amount INT,					
+    cust_id INT,
+    FOREIGN KEY(cust_id) REFERENCES customers(cust_id) ON DELETE CASCADE
+  );
+
+  *** DELETE FROM customers WHERE name ='mamun';
+
+
+============================================ mysql join=================================================
+
+
+
+SELECT m.member_id, m.name , 
+c.committee_id, c.name as committee					= common id na thakleo name dhore table join kora hoyeche.
+FROM members m 								  sudhu common record gulai show korbe.
+INNER JOIN committees c ON m.name = c.name
+
+
+
+============( using where clause )=================
+
+SELECT m.member_id, m.name , 
+c.committee_id, c.name as committee
+FROM members m, committees c WHERE m.name = c.name;
+
+
+
+
+===============( left join )===================				= all data will show including 	common field				
+
+
+SELECT 
+    m.member_id, 
+    m.name AS member, 
+    c.committee_id, 
+    c.name AS committee
+FROM
+    members m								= this is the focusing table
+LEFT JOIN committees c USING(name);
+
+
+=============================== PHP Mysql ==============================================
+
+1.  extract($_POST) ; 			=  form er shob variable niye neya hoye jabe.
+
+2. echo $myDB->affected_rows ;        // koyta data insert hoilo dekhabe
+
+3. $result->num_rows 			= show number of rows
+
+
+* diff betwwen CHAR vs VARCHAR
+
+
+
+
+==================================Authentication Doc ===================================
+
+1. connect the DB ( check if it has users, if not input some users )
+
+2.  connect index page / login form with login page through action
+
+3. connect db-config with login page,  chech email & password is set, give query, fetch data , start session
+
+
+
+
+
+==================================== Securing MySQL ==========================================
+
+*** take necessary action for MySQL user authorization & authentication ***
+** Grant = give permission ,	revoke = remove permission **
+
+
+
+create user 'masum'@'localhost'identified by 'abc123'			= mysql user created
+mysql -h localhost -u masum -p						= command for user login
+grant select, insert on wdpf_55.* to 'masum'@'localhost';		= masum user wdpf_55 database er shob table select , insert korte parbe
+grant select, insert on wdpf_55.* to 'masum'@'localhost';		( to give this command you need to login as root user )
+
+
+
+
+
+=================================== MySQL trigger ==============================================
+
+// use case of trigger
+
+* order/stock remaining er jonno trigger use kora hoy.
+* user tracking /  order tracking
+* audit  
+
+
+// trigger command insert
+
+CREATE TRIGGER after_students_insert				
+    AFTER INSERT ON students					
+    FOR EACH ROW 
+ INSERT INTO students_audit
+ SET 
+     student_id = NEW.id,
+     student_name = NEW.name ,
+     action = 'insert' ;
+
+
+
+// trigger command update
+
+CREATE TRIGGER after_students_update				
+    AFTER UPDATE ON students					
+    FOR EACH ROW 
+ INSERT INTO students_audit
+ SET 
+     student_id = OLD.id,
+     student_name = OLD.name ,
+     action = 'update' ;
+
+
+
+
+// trigger command delete
+
+CREATE TRIGGER after_students_delete				
+    AFTER DELETE ON students					
+    FOR EACH ROW 
+ INSERT INTO students_audit
+ SET 
+     student_id = OLD.id,
+     student_name = OLD.name ,
+     action = 'delete' ;
+
+
+
+
+
+
+// product order 
+
+
+CREATE TRIGGER after_orders_insert				
+    AFTER INSERT ON orders					
+    FOR EACH ROW 
+ UPDATE products
+ SET 
+     ProductAmount = ProductAmount - NEW.ProductAmount 				
+     WHERE products.ProductID = NEW.ProductID  ;
+     
+
+*** left side product table | right side order table ***
+     
+
+
+
+
+// create table
+
+CREATE TABLE students_audit(
+ id int AUTO_INCREMENT PRIMARY KEY,
+ student_id int NOT NULL,
+ student_name VARCHAR(100),
+ action VARCHAR(10),
+ date DATETIME DEFAULT CURRENT_TIMESTAMP
+)
+
+
+
+DELIMITER //
+CREATE TRIGGER trigger_before_insert
+BEFORE INSERT ON employees
+FOR EACH ROW
+BEGIN
+IF NEW.salary<0 THEN
+ SET NEW.salary = 0;
+ END IF ;
+ END //
+ DELIMITER ;
+
+
+
+DELIMITER //
+
+CREATE TRIGGER trigger_before_update
+BEFORE UPDATE ON employees
+FOR EACH ROW
+BEGIN
+    IF NEW.salary < 0 THEN
+        SET NEW.salary = OLD.salary;
+    END IF;
+END //
+
+DELIMITER ;
+
+
+#### how to check the existing trigger
+
+SHOW TRIGGERS LIKE 'table name'; (all trigger show kore ae command er maddhome)
+
+### How to delete the existing trigger?
+
+DROP TRIGGER database name.trigger name;
+
+
+ 
+
+
+
+
+====================================== MySQL View ==============================================
+
+
+
+1. 	SELECT * FROM customers WHERE city = 'Madrid' OR city='paris';				= view both city result
+
+
+ CREATE VIEW manufacturer_info AS
+2. 	SELECT manufacturer.M_id , company_name, address, contract products.P_id, P_name, P_price FROM Manufacturer , products WHERE manufacturer.M_id = 	products.P_id 									
+												= get data from two table
+
+
+
+3. 	SELECT customers.customerNumber , customerName, phone, city orderNumber, orderDate, status FROM customers , orders WHERE customers.customerNumber = 	orders.customerNumber AND status != 'shipped';
+
+												= get customers data which are not shipped.
+
+
+
+
+4. 	SELECT customers.customerNumber, customerName, phone, city , orderNumber, quantityOrdered , priceEach ,orderdetails.productCode, productName FROM customers, 		orderdetails, products WHERE ????
+
+												= get data from multiple table.
+
+
+
+* 	SELECT customers.customerNumber, customerName, phone, city , orderNumber, quantityOrdered , priceEach ,orderdetails.productCode, productName, quantityOrdered * 	priceEach AS TotalPrice FROM customers, orderdetails, products WHERE ????
+
+
+												= multiply column and show result in a new column 
+
+
+
+
+* 	SELECT customers.customerNumber, customerName, phone, city , quantityOrdered ,orderdetails.productCode, productName, quantityOrdered * priceEach AS TotalPrice 	FROM customers, orderdetails, products GROUP BY customerNumber				
+												= group by ( per head koto order korce seta pawa jabe )
+
+
+
+5. create view 		= save the query table
+
+CREATE VIEW customer_orders AS
+SELECT customers.customerNumber, customerName, phone, city , quantityOrdered ,orderdetails.productCode, productName, quantityOrdered * priceEach AS TotalPrice 	FROM customers, orderdetails, products GROUP BY customerNumber ;
+
+6. CREATE VIEW inst_info AS 
+SELECT student_name, course_name, fees FROM students JOIN student_course ON student_course.student_id = students.id
+JOIN courses ON student_course.course_id = courses.id;
+
+
+
+
+
+
+7. CREATE VIEW students_info AS SELECT student.id , name , adress, mobile, module_name , total_mark, result.student_id FROM student, result WHERE student.id = result.student_id;
+
+8. DROP VIEW inst_info; (ae command er maddhome view delete kora hoy);
+
+9. SELECT student_name, SUM(fees) FROM inst_info GROUP BY student_name; (view table thake student and total fees ber kora hoy);
+
+
+
+====================================== Group By Having ==============================================
+
+SELECT student_name, SUM(fees) FROM inst_info GROUP BY student_name HAVING SUM(fees)>5000;
+
+====================================== Group By ROLLUP ==============================================
+
+SELECT IFNULL(student_name,"Total"), SUM(fees) FROM inst_info GROUP BY student_name WITH ROLLUP; (jekono table er last..a akti row add korar junno ROOUP beboher kora hoy. )
+
+======================================= Stored Routine ===============================================
+
+* stored routine is creating function in mysql which will be called in php. so it will work faster. *
+
+
+      
+=======================================STORE PROCEDURE===============================================
+**** An SQL statement or a set of SQL Statement that can be stored on database server which can be call no. of times.
+often used for performing actions like data modification, transaction control, and executing sequences of statements.
+
+ ### types of Store routine ###
+    1. Stored Procedure
+    2. User Defined Functions
+
+1. DELIMITER //
+Create PROCEDURE students_info(IN p_Name varchar(30), IN p_Gender ENUM('Male','Female'), IN p_DOB date, IN p_Email Varchar(50), IN p_Batch Varchar(10), IN p_Address Varchar(50), IN p_Hobbies Varchar(30))
+     BEGIN
+     insert into students( Name, Gender , DOB, Email, Batch ,Address, Hobbies) values (p_Name, p_Gender,p_DOB, p_Email, p_Batch, p_Address, p_Hobbies );
+     END //
+
+2. DELIMITER $$
+CREATE PROCEDURE emp_info()
+ BEGIN 
+ SELECT * FROM employees ORDER BY salary;
+ END$$
+ DELIMITER ;
+
+3. DELIMITER $$ 
+CREATE PROCEDURE get_empid(IN p_fname VARCHAR(50)
+BEGIN 
+ SELECT emp_id FROM employees WHERE fname = p_fname;
+ END$$   
+ DELIMITER ;
+
+call get_empid("mamun");   (procedure name dore procedure call kora hoy);
+
+     
+====================================== DATABASE INDEXING =================================
+
+####  Creating and using indexes in Mysql is a powerful way to optimize the performance of a database.
+
+## index er maddhome kom somoye....a onk data query kore ana jye.
+
+## How to add Index???
+
+Ans: CREATE INDEX index name ON Table Name(COLUMN NAME for Example salary, emp_id);
+
+Example: CREATE INDEX i_fname ON employees(fname, lname);
+
+## How To Show Index in  a table???
+
+SHOW INDEXES FROM Table Name;
+
+Example: SHOW INDEXES FROM employees;
+
+## How to Remove index??
+
+## ALTER TABLE Table Name DROP INDEX Index name;
+
+Example: ALTER TABLE employees DROP INDEX i_fname;
+
+
+
+
+
+1. full text indexing
+
+** enable full text indexing in the productDescription column. **
+
+SELECT `productCode` , `productName` FROM products WHERE MATCH (`productDescription`) AGAINST ('wheels');
+
+
+
+// shell command for backup / export  of big Database
+mysqldump -u root -p wdpf_55 > wdpf_55_backup.sql
+
+// Mysql database importing from shell
+mysql -h localhost -u root -p wdpf_test < wdpf_55_backup.sql
+
+
+
+
+
+========================================= Mysql prepared statement ===============================
+
+1. query  gula jomai rekhe shob gula aksathe call kore jaate database er upor pressure kom pore & joldi execution ghote.
+
+2. PDO  -  ( PHP Data Object )	= PDO te code kora thakle jekono database change hoye geleo kaaj korbe.
+
+
+
+==================================== FOREIGN KEY CONSTRAINTS======================================
+
+#### Relation a Foreign  key with another table. ak table er primary key onno table...a sadaron key hesabe beboher krle take Foreign key bole ###
+
+1. CREATE TABLE orders(
+	ord_id INT AUTO_INCREMENT PRIMARY KEY,
+    date DATE,				
+   	amount DECIMAL(10,2),
+    cust_id INT,
+    FOREIGN KEY (cust_id) REFERENCES customers(cust_id)
+)
+
+2. SELECT CONSTRAINT_NAME, COLUMN_NAME, REFERENCED_TABLE_NAME FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE WHERE TABLE_NAME ='je table er shati realtion hoise se table er naam(exp:orders)';    (Constraint ba foreign key check kore ae command er maddhome....a)
+
+
+
+============Database Date Formate=============
+
+		Date= YYYY-MM-DD
+
+==================== Default Value Set==============
+
+CREATE TABLE customer2(
+id INT AUTO_INCREMENT PRIMARY KEY,  (je kono Table a Default Value Set kora jye. tobe Insert korar somoy default column er value ar insert krte hbe na);
+    name VARCHAR(50),
+    email VARCHAR(150),
+    acc_type VARCHAR(40) NOT NULL DEFAULT "saving"
+);
+
+====================Alias9 Or As keyword=====================
+
+SELECT id AS Account_NO FROM customer2;
+
+
+=======================CONCATE()=============================
+
+Two string add for example
+1. SELECT CONCAT('Hey', " ",'Buddy!');
+result : Hey Buddy!
+982.Select emp_id, CONCATE(fname, '', lname) as FullName FROM employees;
+
+kono string er shati kono kichu add korar khetre..o bebotrito hoy.
+
+3.Select emp_id, CONCATE(fname, '', 'abcd') as FullName FROM employees;
+
+4.SELECT CONCAT_WS('-','Hi', 'Hello', 'jim', 'Luci');
+
+result:Hi-Hello-jim-Luci
+
+5.SELECT CONCAT_WS(':', emp_id, UPPER(name), dept) FROM employees;
+
+6. SELECT CONCAT(LEFT(dept, 1), emp_id) FROM employees;
+result: m1,d2, a3
+
+7. SELECT CONCAT_WS(':', emp_id, name, dept) FROM employees
+
+result: 1:mamun:manager
+2:khayrul Alam Rayan:developer
+3:rashed:accounting
+4:shovo:businessman
+
+
+=======================REPLACE=============================
+
+1. SELECT REPLACE(str, from_str, to_str)
+
+Exp:SELECT REPLACE('ABCDPQR', 'PQR', 'XYZ');
+
+Result: ABCDXYZ
+
+Exp:SELECT REPLACE('Hello Buddy', 'Hello', 'Hay');
+
+Result: Hay Buddy
+
+Exp: SELECT REPLACE(emp_id, 2, 2000) AS NewEmpIDs, name FROM employees;
+
+Result:2000 khayrul Alam Rayan
+
+Exp:SELECT REPLACE('HEY BUDDY','','');
+
+
+=======================CHAR_LENGTH=============================
+
+1.SELECT name, CHAR_LENGTH(fname) AS Length FROM employees   (jekono field er char length jana jye)
+
+2.SELECT * FROM employees WHERE CHAR_LENGTH(name) > 5;       (field er length 5, 10, 20 upoer jana jabe)
+
+
+
+=======================Other Funcation=============================
+
+1. SELECT INSERT('Hello Wassup', 6, 0, 'Raju'); ()
+
+result: HelloRaju Wassup (kono sentence er maje jekono kichu add kora jye);
+
+2.SELECT LEFT('Hey Buddy Raju',9);
+result:Hey Buddy (ae funcation er maddhome left side ser jekono content ana jabe)
+
+3.SELECT RIGHT('Hey Buddy Raju',4);
+result:Raju (ae funcation er maddhome right side ser jekono content ana jabe)
+
+4.SELECT REPEAT('masum', 15); (ae funcation er maddhome jekono jinesh akadikbar repeat kora jabe)
+result: masum masum masum masum masum
+ 
+5.SELECT TRIM('    Bangladesh    ');
+ result:Bangladesh    (trim er maddhome white space remove kora hoy right and left side);
+
+=======================REVERSE=============================
+1.SELECT emp_id,  REVERSE(name) FROM employees;
+Result:dehsar
+
+=======================UPPER & LOWER=============================
+
+1. SELECT UPPER('abcdxyz');
+  SELECT UCASE('abcdxyz');
+ result:ABCDXYZ
+
+2. SELECT LOWER('ABCDXYZ');
+   SELECT LCASE('ABCDXYZ');
+  result:abcdxyz
+
+
+=======================DISTINCT==================================
+
+1. SELECT DISTINCT dept FROM employees;   (table er kono field er unique value ber kore aner junno ae method beboher kora hoy)
+accounting, casherir, manager, developer, accounting, cahserier, accounting
+
+result: accounting, casherier, developer, manager
+
+=======================ORDER BY==================================
+
+1.SELECT * FROM `employees` ORDER BY lastName, firstName; (Assending order sorting hoy[choto thake boro])
+
+2.SELECT * FROM employees ORDER BY fname DESC;    (descending order a sort hoy. boro thake choto)
+
+3.SELECT * FROM employees ORDER BY fname DESC, lname DESC; (descending order a sort hoy. boro thake choto)
+4. 3. SELECT * FROM employees ORDER BY salary DESC; (decending order a salary sorting kora)
+
+=======================LIKE==================================
+1. SELECT * FROM employees WHERE dept LIKE "%acc%";
+
+2. SELECT * FROM employees WHERE lname LIKE '____'; (lname er protom 4 chart asbe);
+
+3. SELECT * FROM employees WHERE fname LIKE 't%';
+
+4.  SELECT * FROM employees WHERE dept LIKE '%t'; 
+
+5. SELECT * FROM employees WHERE dept LIKE "%nag%";
+
+6. SELECT * FROM employees WHERE emp_id LIKE "%2%"; (id query kora jye)
+
+7. SELECT * FROM employees WHERE fname LIKE "t%" OR fname LIKE "m%";
+
+=======================NOT LIKE==================================
+
+1. SELECT * FROM employees WHERE fname NOT LIKE  "t%";  (first letter t chara sob asbe)
+
+2. SELECT * FROM employees WHERE fname NOT LIKE "m%"; (first letter m chara sob asbe)
+
+
+
+=======================COUNT()==================================
+
+1. SELECT COUNT(*) FROM employees;  (table er moddhe koto ta record ase ta count fucation er maddhome jana jabe);
+
+2. SELECT COUNT(fname) FROM employees; (table er moddhe nirdisto field  koto ta record ase ta count fucation er maddhome jana jabe);
+
+3. SELECT COUNT(DISTINCT dept) FROM employees; (table er moddhe nirdisto field Unique koto ta record ase ta count fucation er maddhome jana jabe);
+
+4. SELECT COUNT(emp_id) FROM employees WHERE dept = "accounting"; (table er moddhe nirdisto field id dore accounting kotobar ase ta jana jye);
+
+=======================GROUP BY==================================
+
+1. SELECT dept FROM employees GROUP BY dept; (group vabe unique department chole asbe)
+
+2. SELECT dept, COUNT(emp_id) FROM employees GROUP BY dept; (kon department koyta ase ta group akare chole asbe);
+
+3. SELECT dept, AVG(salary) FROM employees GROUP BY dept;
+
+
+
+=======================SUM()==================================
+
+1. SELECT SUM(salary) FROM employees;
+ 
+2. SELECT AVG(salary) FROM employees;
+
+3. SELECT dept, SUM(salary) FROM employees GROUP BY dept;  (kon department er koto salary ta group by total salary show kore)
+
+4. SELECT dept, COUNT(emp_id), SUM(salary) FROM employees GROUP BY dept; (kon department koyta ase tar id dore total salary ber kora jye)
+
+
+==========================TIMESTAMP===============================
+
+created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+update_at DATETIME ON UPDATE CURRENT_TIMESTAMP
+
+current time = CURTIME()
+current data = CURDATE()
+current dayname =DAYNAME(NOW())
+Date-Formate(dd:mm:yyy) = DATE_FORMAT(NOW(), '%d:%m:%Y')
+
+Date-Formate(May 26nd at 22:00:00) = SELECT DATE_FORMAT(NOW(), '%M %D at %T');
+
+==========================lessthan, getterthan, Not equal(>, <, >=, <=, !=)===============================
+
+1. SELECT * FROM employees WHERE salary>=65000;  
+2. SELECT * FROM employees WHERE salary<=65000;
+3. SELECT * FROM employees WHERE salary>65000;
+4. SELECT * FROM employees WHERE salary != 25000; (25000 value chara baki value gulo asbe)
+5. SELECT * FROM employees WHERE salary = 25000;  (sudo 25000 er value gulo asbe)
+6. SELECT * FROM employees WHERE salary = 25000 AND dept= "businessman";
+
+
+==========================AND, OR===============================
+
+1. SELECT * FROM employees WHERE salary=25000 AND dept = 'businessman';
+
+2. SELECT * FROM employees WHERE salary = 65000 OR dept = 'accounting';
+
+3. SELECT * FROM employees WHERE salary = 25000 OR salary = 65000 OR salary = 120000;
+
+4. SELECT * FROM employees WHERE salary>=40000 AND salary<= 65000;
+
+
+==========================IN, NOT IN===============================
+
+1. SELECT * FROM employees WHERE dept IN('accounting','businessman', 'cashier'); [IN operatore diye multiple value ber kore ana hoy.]
+
+2. SELECT * FROM employees WHERE dept NOT IN('accounting', 'businessman'); [NOT IN operatore je value gulo first brac er moddhe ase segulo chara onno gulo asbe.]
+
+==========================BETWEEN===============================
+
+   SELECT * FROM employees WHERE salary>=40000 AND salary<= 65000; (BETWEEN diye aro sohoj vabe kora jye)
+
+1. SELECT * FROM employees WHERE salary BETWEEN 40000 AND 65000;  (find employees whose salary is more than 40000 and Less than 65000 [40000 er beshi 50000 er kom])
+
+==========================CASE===============================
+
+1. SELECT fname, salary, CASE  WHEN salary !=0 THEN  salary/80 END AS "TK IN DOLLER" FROM employees;
+
+2. SELECT fname, salary, CASE WHEN salary>=40000 THEN "High Salary" ELSE "Low Salary" END AS "salary_category" FROM employees;
+
+3. SELECT fname, salary, CASE WHEN salary>=50000 THEN "Higher Salary" WHEN salary>=40000 AND salary<50000 THEN "Mid Salary" ELSE "Low Salary" END AS "salary_category" FROM employees;
+
+
+===================================== CHECK() ============================================
+
+1. CREATE TABLE contact(
+mobile VARCHAR(15) UNIQUE CHECK(LENGTH(mob) >=10)  [CHECK er maddhome nirdisto kora jye characture length poriman]
+
+)
+
+2. CREATE TABLE contact2(
+	mobile VARCHAR(11) UNIQUE, CONSTRAINT mob_no_less_than_10digits CHECK(LENGTH(mobile) >=10));  [CONSTRAINT er maddhome 10 digit kom dile constraint message ti dibo]
+
+
+============================================== CONSTRINT=====================================================
+
+1. SELECT CONSTRAINT_TYPE, CONSTRAINT_NAME FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS WHERE TABLE_NAME ='mycontact'; (ae command diye table er moddhe CONSTRAINTS ase kina CHECK kore)
+
+2. ALTER TABLE mycontact DROP CONSTRAINT mob_no_less_than_10digits [ae command er maddhome CONSTRAINT delete kora hoy];
+
+3.ALTER TABLE mycontact ADD CONSTRAINT mob_no_less_than_10digits CHECK(LENGTH(mobile)>=10)
+
+
+
+====================================== CTE ==============================================
+
+## We want to calculate the average salary per department and then find all employees whose salary is above the average salary of their department.
+
+
+
+==================================== Database Taking Backup============================================
+
+ mysqldump -u root -p mydatabase>mydatabase_backup.sql
+
+
+
+

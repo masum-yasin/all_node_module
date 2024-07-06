@@ -1,0 +1,545 @@
+
+============================================================================== DOM Element=============================================================================
+
+Whate is dom???
+DOM hocche html document er junno akta programme interface.
+
+jokhon web page ta browser... a load hoy tokhon html document ta dom tree te converted hoy.
+
+dom er dara javascript easily html elements gulo taratari manipulate korte pare.
+
+
+akti dom er moddhe 3 ti jensesh thake....
+
+1.HTML
+2.CSS
+3.JAVASCRIPT
+
+*********************************************************Dom bebohar kore javascript ae kaj gulo krte pare***************************************************
+
+1. html element gulo ke poriborton pare.
+
+2. html element gulo er css poriborton pare.
+
+3. noton html element create krte pare
+
+4. html elements gulo ke remove korte pare. 
+
+5. html attributes gulo ke poriborton krte pare.
+
+6. noton html events create krte pare.
+
+**************************************************************************Dom er full meaning holo ********************************************************************
+document object model
+document -> file
+object -> elements
+model -> layout structure
+
+**************************************************************** html thake dom tree te convert hoy kivave***********************************************************
+
+
+			Document-> Doctype-> Root Element html-> Element Head-> Element body-> Element->meta-> Element Title-> Element h1-> Element Text dom 
+
+
+******************************************************************************Nodes******************************************************************************
+
+## Nodes Diye Dom tree bananu hoy
+## Node hocche objects.Dom tree te document, Doctype, elements, text gulo ke nodes bole.
+
+
+****************************************************stopPropagation [ae tar maddhome event bubble stope kora hoy]****************************************************
+
+
+The stopPropagation() method of the Event interface prevents further propagation of the current event in the capturing and bubbling phases.
+   
+je event er moddhe stopPropagation bebohar kora hoy se event...a por ar onno event gulo executed hoy nah.
+
+ document.getElementById('item-1').addEventListener('click', function(){
+            console.log('click the event li 1 ');
+            event.stopPropagation();
+        });
+       
+        document.getElementById('list-ul').addEventListener('click', function(){
+            console.log('click list ul');
+        });
+        document.getElementById('main-container').addEventListener('click', function(){
+            console.log('click list main container');
+        })
+
+
+
+***********************************************stopImmediatePropagation [ae tar maddhome event bubble stope kora hoy]*************************************
+
+ak doroner id er maddhome je event gula hoy shi id child event gula stop hoy jave only main event ta execuated hbe.
+
+  document.getElementById('item-1').addEventListener('click', function(){
+            console.log('click the event li 1 ');
+            event.stopImmediatePropagation();
+        });
+        document.getElementById('item-1').addEventListener('click', function(){
+            console.log('click the event li 2 ');
+            event.stopPropagation();
+        });
+
+
+************************************************************************************DomMethods************************************************************************
+
+
+Dom method gulo diye dara amora javascript diye html element gulo..k manipulate (add, delete, create, remove, modify, etc korte pari.
+
+
+
+1. what is Javascript : High Level Interpreted Language.
+
+2. document.getElementById('second-title').style.color = 'red'		= id color will be red. (inspect code)
+
+
+3. blogText = document.getElementsByTagName('p');
+        for (const p of blogText) {			= (by using for of loop) every <p> er InnerText will be collected. (script code) .
+        }  
+   console.log(p.innerText) ;
+
+
+4. const secondTitle = document.getElementById('second-title') ;
+        secondTitle.style.textAlign = 'center' ;			= Id er style text-center hoye jabe.
+
+
+5. const thirdTitle = document.getElementById('forth-title');
+        thirdTitle.innerText = 'new title by JS';			= text will be changed.
+ 	thirdTitle.style.backgroundColor = "lightblue"			= background-color will be changed
+	thirdTitle.style.marginLeft = '10px'				
+        thirdTitle.style.padding = '5px'				= margin/padding . 
+	blog.innerHTML =  ` <h3> .... <h3> <p> ....<p>  `		= shob html tag likha jabe. 
+
+
+
+6.  const blogs = document.getElementsByClassName('blog') ;
+        for (const blog of blogs) {					= (by using loop) class style will changed. 
+            blog.style.border = '2px solid orange' ;
+            blog.style.borderRadius = '15px' ;
+        }
+
+
+
+7. document.querySelector('.blog')		= first css select korbe.(id/ class er age #/. use korte hobe )
+   document.querySelectorAll('p')		= all css select korbe.
+ 
+
+8. secondTitle2.setAttribute('title', 'I added a tooltip usnig JS')	= title er attribute set hobe.
+
+
+
+
+
+
+
+
+12. 
+const friend = document.createElement('li');
+friend.innerText = 'Friend- 11' ;			= create Element.
+friends.appendChild(friend)  
+
+
+13. const friendDiv = document.createElement('div');
+    friendDiv.classList.add('freind');			= <div> er vitor friend .class add hoye jabe .
+
+14. 
+const friends = document.getElementById('friends') ;
+const fifth = friends.children[4] ;
+console.log(fifth);					= Remove element.
+friends.removeChild(fifth);
+
+
+
+=============================================================== Event =========================================================================
+
+* OnClick 
+
+1. <button onclick="alert(7)">Click me </button>	= An Alert message will show.
+
+2. <button onclick="document.body.style.backgroundColor='lightgreen'">Click me: Green </button>					= BG will be green on click  (method-1)
+
+3. <button onclick="makeRed()" > click me : red   </button>
+   function makeRed() {						 = BG will be red using Function(method-2)
+    document.body.style.backgroundColor = 'coral' ;
+}
+
+4.*** <button id="blue-button"> click me: Blue</button>
+    function makeBlue () {
+     document.body.style.backgroundColor = 'lightblue'	     = Bg Blue by calling ID & function using DOM.(Method-3)
+ }
+const blueButton = document.getElementById( 'blue-button' );
+ blueButton.onclick = makeBlue ;				= makeblue() function age call() kora jabena. ***
+
+
+
+
+============================================================================JAVASCRIPT EVENTS=========================================================================
+
+
+
+============================================================JAVASCRIPT EVENTS================================================================================
+
+
+
+* movemouse	= mouse joto move korbe toto event hobe.
+* mouseenter	= mouse pointer enter korlei event hobe.
+* mouseout	= mouse pointer out hoye gese event hobe.
+* Onchange
+* Onclick
+* Onmouseover
+* Onkeydown                                                                                                                                                             * Onblur
+* Onload
+
+
+
+========================mouseenter [mouseenter hover on input field show yellow color and mouse leave then remove yellow color]================================
+
+ <input type="text" style="padding: 10px;" id="mouseEnter" placeholder="Check it">  
+  </body>
+  <script>
+      document.getElementById('mouseEnter').addEventListener('mouseenter', function() {
+          this.style.backgroundColor = 'yellow';
+      });
+  
+      document.getElementById('mouseEnter').addEventListener('mouseleave', function() {
+          this.style.backgroundColor = '';
+      });
+  </script>
+
+
+
+======================================================================================Onclick() Example=============================================================
+
+
+1. <button onclick="makeYellow()">Make Yellow</button>
+
+<script>
+    function makeYellow(){
+        document.body.style.backgroundColor = "yellow";
+    }
+</script>
+
+2. <button id="makeblue">Make Yellow</button>
+
+const bluebtn= document.getElementById('bluebtn').addEventListener('click',function makeBlue(){
+    document.body.style.backgroundColor = "blue"
+})
+
+3.     <button id="makePurple">Make Purple</button>
+
+<script>
+    const Purblebtn = document.getElementById('makePurple');
+    Purblebtn.onclick = function makePurple(){
+        document.body.style.backgroundColor = 'purple';
+    }
+</script>
+
+4.<button id="makePink">Make PINK</button>
+
+<script>
+    const pinkbtn = document.getElementById('makePink');
+    pinkbtn.addEventListener('click', makePink);
+    function makePink(){
+document.body.style.backgroundColor = 'pink';
+    }
+</script>
+
+
+5.  <h5 id="handlerStatus">Default Event on Click</h1>
+    <button onclick="handlerEvent()">Click On a Button Show to Another Text</button>
+
+    <script>
+    function handlerEvent(){
+        const statusEvent = document.getElementById('handlerStatus');
+        statusEvent.innerHTML = "<h1>Event Hit and Change in Html Web page</h1>";
+    }
+    </script>
+
+
+
+5. console.log(nameField.value)		=	input er vitorer text paite hoile (.value) deya laagbe.
+
+
+
+=============================================================== module (24-6) Delete confirmation =============================================================
+
+
+
+
+6. events
+
+ * focus 	=  seta focus korbe seta edit/style hobe.
+ * blur  	=  bahirer ongshe click korle edit/style hobe.
+ * keydown 	=  ak key por console.log pabe
+ * keypress 	=  ak key age pabe.
+ *** keyup	=  key deyar sathe sathe peye jabe.***
+ *** change	=  full text copy kore dileo peye jabe***
+
+
+
+============ module (24-7) Event Bubble ============
+
+
+7. event.stopPropagation 		=	stop/turn off/avoid  event bubble.
+
+8. event.stopImmediatePropagation() ;	=	aitar parent/child er shob event stop hoiya jabe.
+
+9. console.log(event.target) ;		=	jake target korsi take click korle dekhabe.
+
+10. 
+
+****************************Html file thake element gulo amora nite pari 5 ti system...a*********************************
+
+1. getElementById
+2. getElementsByClassName
+3. getElementsByTagName
+4. 
+
+=========================================InnerText==========================================
+
+*** Html er vitorer text gulo access kora jye innertext er maddhome.
+
+  <script>
+        liCollection = document.getElementsByTagName('li');
+        // console.log(liCollection);
+        for(const li of liCollection){
+            console.log(li.innerText);
+        }
+    </script>
+
+============================================================================getElementById=============================================================================
+
+<script>
+        liCollection = document.getElementsByTagName('li');
+       	 console.log(liCollection);
+        for(const li of liCollection){
+             console.log(li.innerText);
+          }									= jkono akti nirdisto element....k catch kora jabe
+    </script>
+
+ <script>
+         const placeh1 =document.getElementById('visit');
+         const output= placeh1.innerText = "Bangladesh is Beautiful Country";
+         console.log(output);
+        
+    </script>
+
+=========================================getElementsByClassName==============================================
+
+</script>
+        <script>
+            const lilist = document.getElementsByClassName('important-places');
+            // console.log(lilist);
+            for(const li of lilist){
+                console.log(li);          
+            }
+        </script>
+
+
+=========================================getElementsByTagName==============================================
+
+<script>
+        const storeTags = document.getElementsByTagName('li');
+        for(const storeTag of storeTags){
+            console.log(storeTag);                                   = nirdisto class gulo..k select korar junno bebohar kora hoy
+        }
+    </script>
+
+
+=========================================querySelectorAll==============================================
+ <script>
+        const countryList = document.querySelectorAll('.country-list li');
+        // console.log(countryList);
+        for(const li of countryList){                                 = nirdisto element er sob gulo select korar junno bebohar kora hoy
+            console.log(li.innerText);
+        }
+
+
+const sections = document.querySelectorAll('section');
+for(const section of sections){
+    section.style.border = "2px solid green";
+    section.style.backgroundColor = "blue";
+
+    </script>
+
+
+=========================================querySelector==============================================
+
+<script>
+        const countryList = document.querySelector('.country-list li');
+        console.log(countryList);
+        
+        </script>
+
+
+
+================================= ae koyak ta step er maddhome akta div er class er vitorer elemnet and text gulo access kora jye===========================
+
+document.getElementsByClassName('address-widget')
+
+document.getElementsByClassName('address-widget')[0]
+
+document.getElementsByClassName('address-widget')[0].innerText
+
+document.getElementsByClassName('address-widget')[0].innerHTML
+
+======================================================== jekono div er akti Element Change kora jave ====================================================
+
+document.getElementsByClassName('favoriate-container')[0].innerHTML = '<section>National Beautiful Country </section>'
+
+
+======================== jekono div id dore oi div er childnodes gula dekha jabe (ae ti browser er consol a dekte hoy) ========================================
+
+							placeContainer.childNodes[2]
+
+========================================akti nirdisto element er parent element ti khuje pawya jye (ae ti browser er consol adekte hoy)===============================
+
+## ParentNode and ChildNode 
+
+** akti parent node er akadik child node thakte pare segulo....k neighbours ba sibling nud bole.
+
+1. placeUl.parentNode
+
+2. secondTitle2.parentNode.parentNode.parentNode	= joto parentNode lekhbe toto uporer parent dekhabe.
+
+3. <section>
+        <ul id="ul-container">
+            <li class="item">Lorem ipsum dolor sit amet.</li>
+            <li class="item">Minus hic temporibus dolorum deserunt.</li>
+          
+        </ul>
+    </section>
+</body>
+<script>
+    const items = document.getElementsByClassName('item');
+    for(const item of items){
+      item.addEventListener('click', function(event){
+        console.log(event.target.parentNode);
+      });
+    }
+</script>
+
+   
+4.  <section>
+        <ul id="list-container">
+            <li class="item">Lorem ipsum dolor sit amet.</li>
+            <li class="item">Minus hic temporibus dolorum deserunt.</li>
+        </ul>
+        <button id="btn-add-item">Add Item</button>
+    </section>
+</body>
+<script>
+   
+   document.getElementById('list-container').addEventListener('click', function(event){
+    event.target.parentNode.removeChild(event.target)					[list-container parentNode...k dore childNode gulo...k add and remove kora jye]
+    })
+
+document.getElementById('btn-add-item').addEventListener('click', function(){
+    const ulContainer = document.getElementById('list-container');
+    const li = document.createElement('li');
+    li.innerText = 'Brand New Item Added';
+    ulContainer.appendChild(li);
+})
+</script>
+
+
+***************************************************************************appendChild()*****************************************************************************
+
+
+==========================kono div ba main tag er vitor append er maddhome nawya jye dynamic vabe(class process)================================
+
+
+const container = document.getElementsByClassName("mainContainer")[0];
+const section = document.createElement('section');
+const h1 = document.createElement('h1');
+h1.innerText = "My favorite Food";
+section.appendChild(h1);
+const li1 = document.createElement('li');
+li1.innerText = "Birani";
+section.appendChild(li1);
+const li2= document.createElement('li');
+li2.innerText = "Borhani";
+section.appendChild(li2);
+const li3 = document.createElement('li');
+li3.innerText = "kacchi";
+section.appendChild(li3);
+container.appendChild(section);
+
+
+
+==========================kono div ba main tag er vitor append er maddhome new element nawya jye dynamic vabe(id process)================================
+
+
+
+1.const container = document.getElementById("mainContainer");
+const section = document.createElement('section');
+const h1 = document.createElement('h1');
+h1.innerText = "My favorite Food";
+section.appendChild(h1);
+const li1 = document.createElement('li');
+li1.innerText = "Birani";
+section.appendChild(li1);
+const li2= document.createElement('li');
+li2.innerText = "Borhani";
+section.appendChild(li2);
+const li3 = document.createElement('li');
+li3.innerText = "kacchi";
+section.appendChild(li3);
+container.appendChild(section);
+
+
+2.  <div>
+      <textarea name="" id="newComment" cols="60" rows="5"></textarea
+      ><br /><br />
+      <button id="commentbtn">New Comment</button>
+    </div>
+  </body>
+  <script>
+    document
+      .getElementById("commentbtn")
+      .addEventListener("click", function () {
+        const commentBox = document.getElementById("newComment");
+        const newComment = commentBox.value;
+        const container = document.getElementById("commentContainer");
+        const p = document.createElement("p");
+        p.innerText = newComment;
+        container.appendChild(p);
+      });
+  </script>
+
+
+
+================================================================addEventListener===================================================================================
+
+
+1. <p id="textField">Bangladesh is a Development Country</p>
+<input type="text" name="" id="inputField"><br><br>
+    <button id="eventClick">Change Paragraph</button>
+
+
+
+    <script>
+        document.getElementById('eventClick').addEventListener('click', function(){         EventListener button er  maddhome <p></p> text remove kora noton kore add kora jye.
+            const inputfiled = document.getElementById('inputField');
+            const inputText = inputfiled.value;
+            // console.log(inputText);
+            const p = document.getElementById('textField');
+            p.innerText = inputText;
+            inputfiled.value = '';
+
+        })
+    </script>
+
+
+
+
+2. <h3 id="heading">Bangladesh is a Beautiful Country</h3>
+    <button id="hitButton">Click Us</button>
+    <script>
+        document.getElementById('hitButton').addEventListener('click', function(){                EventListener er maddhome Button click kore Text Change kora jye.
+            const clickHeading = document.getElementById('heading');
+            clickHeading.innerText = "India And Pakistan Always Fight Face to Face";
+        })
+    </script>
+​ 

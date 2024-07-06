@@ -1,0 +1,114 @@
+===================== Bootstrap classes (module-11) =====================
+
+https://classroom.github.com/a/cuGPxW5j
+
+
+ *********** em = parent tag er upor depend kore barbe/kombe
+             rem = body er upor depend kore barbe/kombe.  ************
+
+1.
+* table-striped = table er header cell gula stripe hoye jabe.
+* table table-bordered border-primary = table will be boardered with primary color.
+* table-light / table-dark	= table will be dark/light .
+* table-responsive	=     table will be responsive & a horizontal scroll bar will appear.
+
+2.
+*  w-25 / w-auto	=	width 25% / content onujayi width hoye jabe.
+*  mh-100		= 	jetuku height/width deya ache tar 100% niye nibe.
+*  mx-auto		=	margin axis auto / allign content center.
+*  mb-(1-5)		=	margin bottom/spacing 1-5 porjonto ney.
+*  my-3/mx-3		=	up-down/ left-right uvoy pashe margin nibe.
+*  m-0			=	margin will be removed.
+
+3.
+*  border border-3	= 	border er 3 size mota hoye jabe.
+*  rounded-3		= 	border radius 3 size hoye jabe.	
+*  border border-warning =	border er color yellow/warning hoye jabe.
+*  rounded / rounded-top =	border radius / border er top radious hoye jabe.
+*  rounded-pill		=	border radius pill akarer hoye jabe.
+*  border-start-0	= 	border er left side e chikon/0 size hoye jabe.
+
+4.
+*  img-fluid 		= 	container er jayga onushare boro/choto hobe.
+*  img-thumbnail	= 	image thumbnail akare ashbe.
+*  rounded float-start/end = 	image will have border radious and it will float left/right.
+
+5.
+*  text-warning		=	text color will be yellow.
+*  text-sm-start	=	text will be small sized and text will allign start(left).
+*  text-lg-start	=		     large
+
+* text-lowercase/uppercase 
+* text-capitalize 	    = 	every word's first letter will be capitalize.
+
+* fs-3 / fs-6		= 	h3 / h6.
+* fw-bold / fw-light	= 	font weight will be bold or light.
+
+* text-muted		= 	text will be muted ( jhapsah jhapsa ).
+* text-reset		=	it inherits the color from its parent.
+
+*   text-decoration-none
+    text-decoration-line-through  = 	text will have a line going through it.
+    text-decoration-underline 
+
+7.  lh-1 
+    lh-sm
+    lh-base		= 	ak like theke arek line er gaap nibe. lh-1 use korle chapa chapi kore thakbe.
+    lh-lg 
+
+8. card		=	card will arrive. 
+
+9. btn btn-warning	  =	button will have yellow color.
+*  btn btn-outline-danger = 	button text and outline (border) will be red.
+*  btn btn-primary btn-sm =	button size will be small.
+
+*  <button type="button" class="btn btn-lg btn-primary" disabled> lorem ipsum </button>
+   = button will be disabled.
+
+10. bg-success bg-gradient	=	bg color will be green and will have gradient.
+
+11. modal		=	popup box/menu er jonno use kora hoy.
+12. offcanvas		=	side nav / side menu appear hobbe.
+
+14. 
+*  d-flex		=	display flex.
+*  flex-column		=	flex column akare hoye jabe.
+
+*  d-flex justify-content-center  = 
+*  d-flex justify-content-between =   justify content
+*  d-flex justify-content-evenly  =	
+
+*  align-items-start
+*  align-items-end		=	align items end(down) .
+*  align-items-center
+
+*  order-1/2/3		=	flex er order diye dile sei order onujaye boshe jabe.
+
+
+
+
+=========================( module-12 Responsive )=========================
+
+
+1.
+*  container-sm/lg/xl
+*  container-fluid     	=	responsive container. 
+
+2. <div class="row">
+        <div class="col-">  =	Rows are wrappers for columns. row er moddhe column thakte hobe. row chara 					column kaj korbe na. column e class boshiye kora jay. (Grid > mix and match)
+
+3. <div class="container">
+       <div class="row row-cols-3">   = aikhane row(parent tag) er class ee shob column(child tag)gular 					class deya jay. (Grid > row columns)
+
+4. col-md-6	=	column 12 vaag er moddhe 6 vaag nibe, md (medium) device er jonno.
+ * col-6	= 	shob device er jonno 6 column niye nibe.
+
+5. gutter	=	column & row er majhe gaap er jonno gutter use kora hoy.
+
+* gx-*		= 	x axis (right-left) e gaap nibe.
+* gy-*		
+* g-0		=	use to remove gutters.
+
+================ molude 12.5( bootstrap recap ) ===============
+
+ 

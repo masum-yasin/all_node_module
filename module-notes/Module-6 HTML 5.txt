@@ -1,0 +1,38 @@
+========================= Module-6 HTML5 =======================
+
+1. <video src"" width"" controls></video> = video/audio tag e controls attribute use korte hoy.
+
+2. <header> = header tag kono blog/article er uporer ongsher jonno dorkar hoy. such as- heading elements (<h1> - <h6>), logo or icon, authorship information etc.  
+
+3. some common HTML5 Tags = <header>, <nav>, <aside>, <footer> ,<main>,<article>
+
+4. table { border-collapse: collapse/separete} = table er prottekta cell er majhe gaap thakbe/thakbena. 
+
+5. <input type="text" name="" placeholder="Enter your name">  
+
+6. <legend> Select your pitha </legend>
+       <p> 
+          <label for="chitoy">
+                <input type="radio" name="chitoy" id="chitoy"> chitoy
+          </label>
+       </p>       
+
+  * Meaning : aikhane <legend> = Select menu er title boshbe.
+ 		      <label>  = text e click korle box cheacked hoye jabe.
+	              <label for=""> & id=""  same thakte hobe.  
+	      name="" = ak <fieldset> er under e pottekta  name=""  er text same thakle radio cheackbox kaj korbe. 
+
+
+7. <textarea name="" id="" cols="30" rows="10"></textarea>  =  alada text lekhar jonno akta box/area ashbe.
+
+8. li {list-style: none;}	= list er jei fota fota/ serial style thake seta chole jabe.
+
+9. a { text-decoration: none; }	= link er niche underline chole jabe.
+
+10. ul > li {  }  : <ul> tag er immediate jei <li> tag ase seita style hobe.
+
+11. display : block = onketa <br> tag er moto kaj kore.
+
+12. <area> = akta image er bivinno jaagay jagay link deyar kaj kore.
+
+

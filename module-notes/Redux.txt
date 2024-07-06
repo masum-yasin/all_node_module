@@ -1,0 +1,30 @@
+1. redux component er state ke global state e rupantor kore modifier er maddhome. 
+jar karone amra jokhon iccha global state er data access/change korte pari.
+
+2. redux is a state management tool for any JS application. It can be used in any js framework.
+
+
+			
+			3 pillars of redux
+
+1. Store = ( global state ) aikhane shokol state joma thake/hoy.
+
+2. Dispatch = component theke kono action generate hoye modifier er kase jawa.
+
+3. Reducer = ( modifier ) aita akta function ja state ke modifier kore store e joma kore.
+
+
+
+				Redux-Thunk
+
+1. Redux-Thunk = It is the old version of redux. It is a package which gives us a middleware. 
+
+2. Middleware = It is a function jeta kono action neyar pore & sei action onujaye kono kisu execusion howar majhe ai middleware fucntion ta boshe.
+
+* Action ar Reducer er majhe thunk-middleware boshe.
+* Thunk-middleware API ke asynchronous way te call kore data niye ashe.
+
+
+				Redux-Toolkit
+
+1.

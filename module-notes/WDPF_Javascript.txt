@@ -1,0 +1,72 @@
+=================== CSS ================================
+
+1. tr:nth-child(even) {
+        background-color: aquamarine;		=  table er row (jor shonkha) gula style hoye jabe.
+       }
+
+
+============================= Javascript ========================
+
+1. concat()		= text1.concat(text2)	{ string pasah pashi anar jonno }
+
+2. trim()		= text1.trim()		{ value er age porer space remove korar jonno use kora hoy. }
+
+3. <input type="text" id="fnumber">   
+
+    function sum () {
+           let fNumber = document.getElementById('fnumber').value;   	=   .value diye input field er data neya jay.     
+           alert(fNumber) ;  
+       		     }
+
+
+4. Check Prime number   for ( i = 2; i < x ; i++ ) {
+                   	 if ( x%i == 0 ) {
+                       	 return x + " is not a prime number" ;			                // vaag shesh thakle = prime 
+                   	     }									// vaag shesh na thakle = not prime 
+               	           } 
+                	return x + " is a prime number" ;
+
+
+
+5. var temp = 5;
+   console.log(temp++) = 5			= post increment ( pore increment hobe )
+   console.log(++temp) = 7			= pre increment ( ager 1 + new 1 = 7 )
+
+
+
+
+6.  in operator  
+ 
+let person = { first:"Masum" ,  middle: "ul" , last: "Hossain" }
+if ( "middle" in person ) {
+    console.log("yes");
+} else {
+    console.log("no");
+}							= object / array er moddhe element ache kina seta jana jaabe
+							  	
+								
+let numbers = [ 15, 20 , 30 ,40 ] ;
+if( 5 in numbers ){
+    console.log("yes");
+} else {
+    console.log("no");
+}
+
+
+
+7. Spread operator 
+
+ let digits = [..."ABCDE12345"]
+
+console.log(digits);				= porita alada string hishebe dekhabe.
+
+
+ 
+8. window.open()
+
+ * var myWindow =  window.open("" , "my_window" , "height=500,width=800,")  	= (URL, name, specs, replace)
+
+
+9.  
+
+ 

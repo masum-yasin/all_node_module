@@ -1,0 +1,122 @@
+==================== CodeIgnitor ====================
+
+
+1. install composer, run composer in cmd to check
+
+2. uncomment intl in php.ini, run , check routing
+
+
+* run angular		=  php spark serve
+* make controller	= php spark make:controller AboutContoler 
+* migration		= php spark make:migration products1_migration;
+* run migration		= php spark migrate
+* migration refresh	= php spark migrate:refresh
+* make cors		= php spark make:filter Cors
+
+
+
+
+##. Show error  = make env to .env, make  CI_ENVIRONMENT = production  to CI_ENVIRONMENT = development ;
+
+##. public string $indexPage = 'index.php';		= remove the index.php for path problem/css,js problem ;
+
+##. seeder 		= https://makitweb.com/codeigniter-4-database-seeding-beginner-guide/
+
+
+============ for crud ===============
+* https://phpforever.com/codeigniterexample/codeigniter-4-crud-example/ 
+
+1. connect db in database.php and env(optional) file.
+
+2. create model file , config the file, 
+config the controler file in which you want to show data 
+
+3.
+
+
+
+
+========================== Authentication ======================
+
+https://www.positronx.io/codeigniter-authentication-login-and-registration-tutorial/
+
+
+
+
+============================ Auth guard ( private Route ) ======================
+
+1. make authguard in filter.php
+2. loginController  =  isloggedin => true
+3. make a authguard filter with cmd, create a session condition 
+4. make ['filter' => 'authGuard'] in router for your routes.
+
+
+
+
+
+
+
+===================== session ========================
+
+* <?php print_r($_SESSION) ?>		= check available sessions.
+* <?php echo session()->name ; ?>	= show name
+
+
+
+======================= multiple table connection ================
+
+https://makitweb.com/codeigniter-4-foreign-key-migration-guide/
+
+*  $this->products->join('category', 'category.id = products.category_id'); 	= products table er sathe category table er join.
+
+
+
+===================== Connect With Rest API ===================
+
+https://www.tutsmake.com/codeigniter-4-rest-api-example-tutorial/
+
+https://onlinewebtutorblog.com/codeigniter-4-enable-cors-for-restful-apis/	= install cors in codeignitor
+
+1. make cors, use http in befor method in cors.php
+2. import these in filter.php
+
+use App\Filters\Cors;
+'cors'          => Cors::class
+'cors'
+
+
+
+===================== Deploy to Production ====================
+1. production mdoe in .env file
+
+2. move all files from public directory to root
+
+3. inside root directory in index.php  file change path
+require FCPATH . '../app/Config/Paths.php';
+to 
+require FCPATH . 'app/Config/Paths.php';
+
+4. change base_url in app/config/App.php as your path
+$baseURL = 'http://localhost:8080'
+to
+$baseURL = 'http://localhost/wdpf55_codignator/deploy/products'
+
+5. Give base_url('') in your routes path.
+
+
+
+
+
+======================= Multiple auth ==========================
+
+https://onlinewebtutorblog.com/codeigniter-4-multi-auth-user-role-wise-login/
+
+1. create role base db field
+2. make noAuth filter ,  make condition for role wise login path in NoAuth.php
+3. make condition for role wise login path in LoginController.php
+4. 'noAuth'        => NoAuth::class 	make the class in Filters.php
+5. Make editor Controller and show them as routes
+
+
+
+

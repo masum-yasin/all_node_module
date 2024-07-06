@@ -1,0 +1,225 @@
+		================== variable ================
+
+
+
+1. var name = 123;  (numeric variable)
+
+2. var name = "sodor uddin";		= variable er maan/value one or more hoile "" (qotation) er moddhe hobe.
+ 	      (string variable)		  (single quotation '' o use kora jay)
+		
+3. var pass = true;		= aikahne "" use kora laagbe na karon aita special value.
+	     ( boolean )
+
+4. variable name rules :
+	* can't use keywords/reserved words  - true,false,delete,case etc.
+	* name should be one word 	- hero alam X	
+	* quote is not allowed		- "name" X
+	* use cammelcase in words	- myOfficeAddress
+	
+5. variable age declare kora thakle next time tar age (var) likhte hoy na.  -  onionPrice = onionPrice + 10;
+
+6. price1 = price1 + 10;
+-- price1 += 10;   (+= means price1 er maan er sathe 10 add hobe.)
+-- price2 -= 10;   
+
+7. age++; = age er maan 1 barbe.
+   age--; = age er maan 1 kombe.
+
+8. var mulaPriceInt = parseInt(mulaPrice);	= (parseInt) diye string ke numeric kora jay. 
+   var mulaPriceInt = parseFloat(mulaPrice);	= (parseFloat) diye doshomik (11.9) shonkha lekha jay.
+
+9. console.log(typeof name);	=	name/data er type jana jabe.
+
+10. total = total.toFixed(1);	= decimal number ee onk gula number thakle sekhan theke (1) shonkha nibe.
+    total = perseFloat(total);  = (toFixed) use korle data string hoye jay, then data ke float/integer	korte hoy.
+
+11. var remaining = mangoes % people;	=	vaag shesh ber korar jonno use kora hoy.
+
+
+
+
+======================== array  =======================
+
+
+
+
+1. var friendsAge = [11, 13, 17];		= [] er dhara Array bujhano hoy.
+
+2. var friends = ['kalam', 'balam', 'salam']	= string Array. 
+
+3. friends.length;				=  array er moddhe koyta element ase seta dekha jabe.
+
+4.  var numbers = [53, 65, 77, 109, 3];
+    var index = numbers.indexOf(109);		= ( indexOf ) diye array er element er index jana jay. 
+    console.log(index);
+
+* if (numbers.indexOf(420) == -1 )		= jodi 420no. ta numbers er vitor na thake. (misssing)
+* if (numbers.indexOf(77) != -1 )		= jodi 77no. ta numbers er vitor thake. (available) 
+
+
+5. var indexNumber = numbers[3];		= 4 no. index ee kon element ase seta jana jabe.
+   console.log(indexNumber);
+
+6. numbers[3] = 100;			=	4 no. element ( replace ) hoye jabe.
+   console.log(numbers);
+
+7. numbers.push(420);			=	 add  element (from ending ).
+   console.log(numbers) 
+
+8. numbers.pop();			=	remove element (from ending).
+   console.log(numbers);
+
+9. numbers.shift();			=	remove element (from beginning)
+   console.log(numbers);
+
+10.  numbers.unshift(420);		=	add element (from begining).
+     console.log(numbers);
+
+11. Condition
+
+*  console.log(5>6);	=	comparison korbe.
+	*  >	= larger than
+	*  <	= smaller than
+	*  <=   = smaller or equal
+	*  >=   = larger or equal
+	*  ==   = is equal
+	*  !=   = not equal
+	*  &&   = and ( both requirement should be fulfilled )
+	*  ||	= or  ( one or another req should be fulfilled )
+
+
+
+
+
+=========================== while loop ========================
+
+
+
+1. while loop er shorto/conditions : 
+	* var er value thakbe
+	* while er vitor variable er condition thakbe.
+	* console
+	* var er value change hobe.
+
+
+2. var roastGiven = 0;
+
+while (roastGiven < 7 ) {
+    console.log('roast den mia');	=(roast er maan 7 er choto thaka porjonto 1+ kore barte thakbe.       roastGiven = roastGiven + 1;	  7 er shoman hoye gele loop off hoye jabe. )
+    
+}
+
+
+3. var number = 1;
+while ( number <= 10 ) {
+    console.log(number)		= var er maan 10 er choto ba tar shoman howar aag porjonto 1+ hte tkbe.
+    number = number + 1;
+}
+ 
+  
+============================ For loop ===========================
+
+
+
+1. for (var number = 1 ; number <= 10 ; number++ ){
+    console.log(number);
+}			= for er vitor (var value ; conditions ; var value change) then console. 
+
+
+
+
+===================== Function ==========================
+
+
+
+1.function startFan (){			= function declare kora holo.
+    console.log('go to the board')	
+    console.log('press the switch');	= jotobar function call kora hobe ai kaj gula kora hobe.
+}
+startFan();				= function call kora holo.
+
+
+2. loop vs function
+* (loop) shesh na howa porjonto bar abr hoitei thakbe. (Function) ke jokhon khushi call kora jay & er vitore kichu     lekha o jay.
+
+
+3. Function parameter
+function bringsingara (taka){			= (taka ) ta hocche parameter.
+    console.log ('shingara er jonno' + taka);	
+}
+
+bringsingara(200);				= (taka) er value 200.
+
+
+
+4. function numbers ( a , b ){		= function nibo
+    console.log ( a , b );		= console
+    var difference = a - b ;		= var equation
+    return difference;			= return var
+}
+var result =  numbers ( 20 , 15);	= var function-name
+console.log (result)			= console
+
+
+
+
+============================  Object ========================
+
+
+1. var book = {				= (book) hocche Object.
+    title: 'Bela Furabar Age',		
+    author: 'Arif Azad',
+    Price: 200,				= bakigula shob properties.
+    publisher: 'shomokal'
+}
+console.log(book.price);		= price property er value dekhabe.
+
+
+*  var bookPublisher = book.publisher;
+   console.log(bookPublisher);		= book er publisher er value var er vitor deya ase.
+
+
+* book.price = 150 
+  console.log(book)			= book er price er value set/update kora jabe.
+
+2. Different ways to set a value of an object
+	* book.price = 200;
+	* book['price'] = 230 ;			
+	* var priceProperty = 'price'		= shesh er prperty value ta shob shomoy nibe.
+	   book[priceProperty] = 190;
+
+
+
+============================ Switch ===================
+
+
+* ( else if ) er shortcut and to the point version hocche ( switch )
+
+
+1. var color = 'yellow' ; 
+
+switch (color){
+    case 'blue':
+        console.log('color is blue');
+        break;
+    case 'red':
+        console.log('color is red');
+        break;
+    case 'white':
+        console.log('color is white');
+        break;
+    default:
+        console.log('color is black'); 
+}
+
+
+
+================================== Break and continue ========================
+
+1. while (n < 10) {
+    console.log(n);
+    if (n == 5) {
+        break;		= ai porjonto hoye break niye nibe./ ( continue ) 
+    }
+    n++;
+}

@@ -1,0 +1,38 @@
+1.
+document.getElementById('login-submit').addEventListener('click', function() {
+    const emailField = document.getElementById('user-email');
+    const userEmail = emailField.value ;				= input email e jeta likhbo seta pawa jabe.
+    console.log(userEmail) ;
+} )
+
+
+2. window.location.href = 'banking.html'	= redirecct you to the .html page
+
+
+=========== module 25-5 ===================
+
+
+2. depositTotal.innerText ;	=	normal tag (<h4>,<p>) hole value dekhanor jonno .innertext dite hoy.
+
+3. depositTotal.value ;		=	input tag hole value dekhanor jonno .value dite hoy.
+
+4. depositeInput.value = '' ;	=	input field clear hoye jabe.
+
+
+=========== module 26-7=========
+
+
+1. debugger ;	=	function er debug korbe (inspect er console e).
+
+
+============ module 27-5 ========== 
+
+2. <button onclick="generatePin()" 	= button e click korle generatePin() function ta kaj korbe.
+
+3. 10 + '' ;		= number er sathe string jog korle purata string hoye jay
+
+4. 10 + ''.length	= the length is 10.
+
+5. console.log(event.target)	= jei button e click korsi oita show korbe.
+
+6. 

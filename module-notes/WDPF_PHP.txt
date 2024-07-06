@@ -1,0 +1,545 @@
+
+
+************************** Basic PHP *****************************
+
+
+1. xamp / htdocks 	- ai folder e shob website raakhte hobe.
+
+
+2.  PHP Configs   
+
+   * <?
+     echo "short open tag" ;   xamp--config--php.ini--short_open_tag=On
+     ?>
+
+   * <?= "Hello this is short circuit"		= short circuit (echo er poriborte use hoy).
+     ?>
+
+
+4. https://pear.php.net/  	=  php opensource library
+
+
+5.  <?php 
+    echo $x , $y ;		= echo - single line e result show kore .
+    print $x ;			  print - single line a result show kore na.
+    print $y ;
+    ?>
+
+
+6. Printf
+
+   * $discrict = 64 ;
+     printf("bangladesh has %d districts" , $discrict) ;		= printf function e %d te prameter er value pass kore dey.
+
+   *  printf("I have %d money " , 100) ;
+	
+   * %d		= decimal number value dibe
+   * %f		= floating number value dibe
+   * %.2f	= doshomik er por 2ta shonkha thakbe (5.02)  
+   * %s		= string value dibe
+
+
+7.     $student = "Masum" ;			= var_dump() discribe your variable .
+        var_dump($student)
+
+
+8.  php OOP Blogs = https://w3programmers.com/
+
+
+9. <?php 
+
+include ("header.php");			= file na pele ai file baade baki content show korbe.
+require ("header.php");			= file na pele execution stop hoye jabe.
+
+?>
+
+
+10. type casting   = nije change kora jay
+     type jugling   = auto change hoye jay
+
+
+
+11. ini_set('display_errors', 0) ; 	= This function nitialize the php.ini feature in the current page. It shows no errors. 
+
+
+
+**** data / user input neyar age sanitization/sanitize korte hobe. *****
+
+
+
+
+
+====================================  Regular expression & String  ===========================================
+
+
+
+
+
+1. if (preg_match("/\bVim\b/i", $line, $match)) print "Match found!";		= string er moddhe theke first match ta khujbe.
+	* preg_match_all ()  							= all match gula show korbe.
+
+
+2. $food = preg_grep("/^p/", $foods);	= array er moddhe theke khujbe.
+
+
+3. preg_replace()
+
+$draft = "In 2010 Spain won the world cup.";
+$keywords = array("/2010/", "/spain/i");
+$replacements = array("2022", "Argentina");
+echo preg_replace($keywords, $replacements, $draft);		= keyword gula khuje replace kore dibe.
+
+
+
+4. n12br($var) 	= create new lines if you give in the string.
+
+
+
+5. htmlentities()
+
+$advertisement = "Coffee at 'Cafè Française' costs $2.25.  100<200";
+echo htmlentities($advertisement , ENT_QUOTES); 			= Convert some characters to HTML entities (view in page source)
+
+
+
+
+6. strip_tags() 
+
+echo $input =  "Email <a href='www.hackme.com'> Get Hacked </a>" ;
+echo " <br> " ;
+echo strip_tags($input) ;			= removes any HTML, XML, and PHP tags.
+
+
+
+
+7. strpos()
+echo strpos("I love php, I love php too!","php");	= give string position from first.
+     strrpos()						= give string position from last.
+
+
+
+8. implode() 
+$cities = array("Dhaka", "Noakhali", " Monitor", "water", "tea", "Bottle") ;
+$mycitites =  implode(' , ' , $cities)  ;					= convert array into string
+
+
+
+
+
+9. substr()
+$msg = "I annoy people by capitalizing e-mail text. " ;
+echo substr($msg, 8 , 6);							= start to end string.
+
+
+
+
+
+10. trim()									= remove gaps/space for string.
+    ltrim()
+    rtrim()
+
+
+
+
+========================================= File & operating system ====================================
+
+
+
+1.disk_free_space()
+
+$dir = "c:/" ;
+$bytes = disk_free_space($dir) ;		= show the available disk free space.
+
+
+
+
+
+2.fileatime()  filectime()   filemtime()
+
+ini_set('date.timezone' , 'Asia/Dhaka') ;
+
+
+$file = 'files.txt' ;
+$atime = fileatime($file);				= show file access time
+$ctime = filectime($file);				= show file mode / change time 
+$mtime = filemtime($file);				= show file mdified time
+
+
+echo "Access Time: " .date("h:i:s", $atime). "<br>" ;
+echo "Changed Time: " .date("h:i:s", $ctime). "<br>" ;
+echo "Modified Time: " .date("h:i:s", $mtime). "<br>" ;
+
+
+
+
+
+
+
+
+=========================================== Date & time ==================================
+
+1.checkdate()								= check a date if it's valid or not.
+ echo checkdate( 2, 29, 2020 ) ? "Leap year" : "Not leap year" ;
+
+
+2.
+
+
+
+
+
+
+=========================================== Session ==================================
+
+1. session_start() ;				= session niye kaj korte gele session function start korte hobe.
+
+
+** php.ini - session.cache_expire=180		=  180 min por session close hoye jabe. **
+
+			
+
+
+
+=========================================== security ==================================
+
+1. disable_functions				= this is disable the required functions.
+
+
+
+
+
+
+
+
+
+
+
+
+======================================= Array ======================================== 
+
+
+
+11. Assosiative array er index nubmer thakle index number diyesearch korte hoy, text thakle text diye search korte hoy.
+
+
+
+12. Explode() function
+
+<?php 
+
+$txt = "we have mid month exam on 16th July";
+$data =  explode( "," , $txt );				= explode function string ke array banay. 
+echo "<pre>" ;						= ai function e 2ta parameter thake, first ta seperator, second ta variable/string.
+print_r($data)
+
+?>
+
+
+
+13. range array
+
+<?php 
+
+$array = range(0 , 20 , 3) ;				=  0 theke 20 porjonto array dekhabe, 3 bebodhan e count hobe.
+echo "<pre>" ;					range(0,20,3) function e 3ta parameter thake. 3rd parameter e bebodhan deya hoy. ( eta optional )
+print_r($array)
+
+?>
+
+
+
+
+14. in_array()
+
+<?php 
+$number = array(1,2,3,4,5);
+
+if(in_array(2,$number)){
+    echo "yes, you are selected";		= it is an build in function checks if a number is in the array or not.
+} else {
+    echo "sorry" ;
+}
+
+?>
+
+
+
+
+
+15. array_key_exist()
+
+<?php 
+$age = array("peter"=>35, "Ben"=>37,"joe"=>43 );
+
+if (array_key_exists("Ben",$age))		 = same as in_array() but works in assosiative array.
+{
+    echo "yes, exist";
+}else {
+    echo "Not exist";
+}
+
+?>
+
+
+
+
+
+16. array_search
+
+<?php 
+$age = array("peter"=>35, "Ben"=>37,"joe"=>43 );	= array_search diye ( value ) search kora hoy ( key/property/index ) return kore.
+
+echo array_search(35, $age)
+
+?>
+
+
+
+
+17. array_keys()
+
+$ages = array("Masum" => 20 , "imran" => 21 , "Molla"=> 23 ) ;	
+
+$students = array_keys($ages); 			= key gula akta new array te show korbe.
+$numbers = array_values($ages);			= sudhu values gula show korbe.
+
+echo "<pre>" ;
+print_r($students)
+
+
+
+
+
+18. array_column()
+
+
+$address = array(
+    ["name"=>"Radiq", "phone"=>"015546541", "email"=>"Rafiq@gmail.com"  ],
+    ["name"=>"Rashid", "phone"=>"019996332", "email"=>"Rashid@gmail.com"  ],
+    ["name"=>"Sadid", "phone"=>"012355561", "email"=>"Sadid@gmail.com"  ],
+    ["name"=>"Hadid", "phone"=>"014125645", "email"=>"Hadid@gmail.com"  ],
+    ["name"=>"Laden", "phone"=>"0163232132", "email"=>"Laden@gmail.com"  ],
+    ["name"=>"Obama", "phone"=>"0155132168", "email"=>"Obama@gmail.com"  ],
+    ["name"=>"Salsabil", "phone"=>"013656456", "email"=>"salsabil@gmail.com"  ],
+);
+
+
+$name = array_column($address, "name");
+echo "<pre>" ;
+print_r($name) ;				= array er vitor shob name serially dekhabe.
+
+
+
+
+19. key() next() current() reset()
+
+$countries = array("Dhaka"=>"Bangladehs", "Kathmandu"=>"nepal", "colombo"=>"shilanka", "Malay"=>"Maldives");
+
+echo key($countries);			= current key/index ta dekahbe
+echo current($countries);		= current value ta dekahbe
+
+next($countries) ;			= next  key/index ta dekhabe
+reset($countries);			= first theke shuru hobe
+echo prev($countries) ;			= previous key er value nibe.
+
+echo key($countries);
+
+
+
+
+
+ *  $countries = array("Dhaka"=>"Bangladehs", "Kathmandu"=>"nepal", "colombo"=>"shilanka", "Malay"=>"Maldives");
+
+    foreach ( $countries as $city =>  $country    ) {
+      echo  $city . "<br>";				= $countries er value gula $city er moddhe ashche, $country er moddhe $countries er key guala asche.
+    
+       }
+
+
+
+
+
+20. count()
+
+$garden = array("a" , "b" , "c" , "d" , array("y","z") , "e" ) ;
+echo count($garden , 1) ;						= // 8  shhob array shoho array er vitorer gula shoho count korbe
+
+
+
+
+
+21. array_count_values()
+
+$numbers = [ 5, 10 , 15 ,5 , 20 , 10 , 15, 5, 5 ];	
+	
+$counting = array_count_values($numbers);			= kon key koybar kore ache ta dekhabe.
+$counting = array_unique($numbers);				= akbar korei array key gula show korbe.
+
+echo "<pre>" ;
+print_r($counting)
+
+
+
+22. sort() array_reverse()
+
+sort($numbers);  			// main array ke change kore. new array dey na.  
+					but assosiative array te key er value gulake sort kore new array dey.
+
+$reversed = array_reverse($numbers) ;   // main array ke change kore na. new array dey
+
+
+
+
+23. asort () rsort() Ksort()
+
+$numbers = array(25,7,86,10,5,30);		= serial onujaye sorting kore (assosiation thik rekhe).
+asort($numbers) ;				= 
+rsort($numbers);				= reverse korebe (assosiation thik rekhe)
+
+
+$fruits = array("Apple"=>215 , "Banana"=>310 , "Orange"=>130, "Angur" => 250 ) ;	
+ksort($fruits);					= array er key gulake sorting kore.
+
+
+
+
+24.  array_merge()  array_combined()  suffle() 
+
+
+$asia = ["Bangladesh" , "Nepal" , "Srilanka", "Bhutan"];
+$other = [ " Austaralia" , "Netherland", "Canada", "England" ] ;
+
+
+$merged = array_merge($asia , $other) ;				= duita ak array te chole jabe.
+$combined = array_combine($asia , $other) ;			= first array er element ke key, second element ke value nibe. 
+$shuffled = shuffle($merged) ;					= array will be shuffled
+
+echo" <pre> " ;
+print_r($merged) ;
+
+print_r($combined) ;
+print_r($shuffled) ; 
+
+
+
+
+25.  array_slice()
+
+$cities = [ "Dhaka" , "Rajshahi", "Khulna", "Barisal", "sylhet", "Ctg" , "Mymsk" ];
+
+$sliced = array_slice($cities, 3,2) ;			= 3 no index there shuru, 2 ta nibe
+
+echo "<pre>" ;
+print_r($sliced) ;
+
+
+
+
+
+
+
+================================= OOP PHP ====================================
+
+
+1. class er vitor  
+	variable = property 
+    	Function = method
+
+*** Use the "extends" keyword to inherit all methods from another class.
+
+    Use the "super" method to call the parent's constructor function.
+
+
+
+
+2. * calling the parent class constructor in child class.
+
+In JavaScript, you use 	= super() 
+       in PHP, you use 	= parent::__construct() 
+
+
+
+
+
+
+18. __construct method
+
+<?php 
+class Car {
+
+    function __construct(){
+        echo "car object is initiated" ;			= __construct function/method auto call hoye jay. call kora laage na.
+    }
+    
+    function sayHallo() {
+        echo " <br> welcome to car class";
+    }
+}
+
+$obj1 = new Car ;
+
+?>
+
+
+* function __construct($name){
+      echo "car name is $name object is initiated" ;		= parameter pass kore deya jay.
+   }
+
+
+
+
+19. __destruct method
+
+ function __destruct(){
+       echo "say bye bye" ;			= shob method/function run korar por sheshe eta run kore. ai function argument/parameter receive 
+    }						  korte pare na.
+
+
+20.  	private $name
+	public $name				= OOP access modifier / visibility / scope
+	protected $name
+
+
+
+21. constructor ()				= actual object ta toiri korbe.
+
+
+
+
+22. class_exists()
+
+   class GFG {
+	public $Geek_name = "Welcome to GeeksforGeeks";
+  }
+    if(class_exists('GFG')) {			= check if the class exist or not.
+	echo "Class name exists";
+     }
+
+
+
+23. $allmethods = get_class_methods("myclass") ; 	= class er vitor methods/functions gula show korbe.
+
+
+24. $vars = get_class_vars('GFG') ;			= give the variables in a class.
+
+
+25. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

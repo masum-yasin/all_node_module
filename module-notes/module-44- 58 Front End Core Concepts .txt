@@ -1,0 +1,110 @@
+1. Web Component : kajer subidhar jonno website er choto choto ongsho gulake akta akta choto choto unit ee vaag kora hoy jaake component bole.
+
+2. const array = ['hello' , 'gelo', 'nilo']
+   array.join('') 						= shob gula string aksathe join hoye jabe.
+
+
+3. SPA ( Single Page Optimization )
+
+4. Website State : User er Interaction onujaye website e kisu change/unchange hoile setake website state bole.
+
+
+==================== module 45 ========================
+
+5. Component er first letter Capital dite hoy.
+
+6. css file should be Imported in Js file in React.		= import './Country.css'
+
+
+
+================= module 47 ( how react works ) =================
+
+1. npm		= Node Package Manager
+
+2. cli		= Command Line Interface
+
+*** Lower case diye start howa tag gula basic html tag ***
+*** Upper case diye start howa tag gula Component tag ***
+
+3. ( !var )  &  ( var = null )		== ai duita same.
+
+4. line-height: 40px;			= line er height bere jabe.
+
+
+==================== Module -51 ================= 
+
+
+5. Conditional Formating
+ 
+ const c = [] ;
+ const number = c.length ===0 ? 5: 10 ;	= 	( if c=0 then c er value 5. else c er value 10 ).
+
+
+======================== 52-4 ( simple Route )	 ========================
+
+6. Five things need for routing 
+   
+     <BrowserRouter>
+        <Switch>
+          <Route path="/home">
+            <Home></Home>
+          </Route>
+        </Switch>
+      </BrowserRouter> 
+
+
+7.  <Route path="*">				= use this path for Not Found page.
+
+8. <Route path="/friend/:friendId">		= Route parameter (:friendId)
+
+*** useEffect(()=>{})				= Used for Data Load.*** (code er bairer kono kisur sathe interact korbe)
+
+*** useState([])/({})				= used for Data Import. *** (kono value er state change hoite pare amon jagay use kora hoy.)
+
+    ( json data array er moddhe thakle [] hobe , data obj er moddhe thakle {} hobe, string thakle '' hobe. )
+
+
+
+
+================================ 57 ( react firebase authentication ) ==============================
+
+1. preventDefault()
+
+const handleRegistration = e => {
+    console.log('regggggggggg kaka regg');				= function er (e) parameter e default option prevent korbe. ( Reload off kore dibe ).
+    e.preventDefault();
+  }
+
+
+
+2. onChange
+
+const handleEmailChange = e => {
+    console.log(e.target.value);					= email er input field e ja lekha hobe tai sathe sathe console log hoye jabe.
+  }
+<input onChange={handleEmailChange} type="email"/>
+
+
+
+3.  onBlur
+<input onBlur={handleEmailChange} type="email"/>			= ai input field theke shore/move kore gele then seta console log hobe.
+
+  
+
+*** kono data/information change hoite pare agula useState() er moddhe raakhte hoy ***
+
+
+
+4. required
+<input type="password" placeholder="password" required/>		= input field e ( required ) attribute use korle ai field fillup kora chara submit hobe na.
+
+
+5.
+  const toggleLogin = e => {
+    console.log(e.target.checked);					= input field checked kina true/false dekhabe.
+  }
+
+
+6.
+
+ 

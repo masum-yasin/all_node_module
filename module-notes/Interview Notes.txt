@@ -1,0 +1,27 @@
+1. Difference bitween Grid and Flex ?
+
+2. what is media query ?
+
+3. How will you make a website with plain CSS ?
+   = By using Media query.
+
+4. Learn & practice & clear the concept 
+  =  https://getbootstrap.com/docs/5.0/layout/grid/
+
+5. What is Event bubble ?
+  =  onekgula parent & child tag er moddhe jokhon event handler add kora hobe tokhon se aste aste prothome capture korar pore se shobcheye lowest element ke age element ke trigger      korbe tarpor tar uporer ta, tarpot tar uporer ta evabe event gula ke uporer dike korte thakbe .
+     ( propagating an event from the lowest to the upward. )	
+
+
+6. how to stop/turn off/avoid  event bubble ?
+  = by using stop propagation ( event.stopPropagation).
+
+7. HTTP Get vs Post method Difference.***
+
+8. cookies vs Session Storage vs Local Storage ?
+
+9. node js VS javascript ?
+
+10. node js VS php/other prog language ? / when and why should you use node js ?
+
+11. 

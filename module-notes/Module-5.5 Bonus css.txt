@@ -1,0 +1,52 @@
+============ Some shortcur Emmets =================
+
+1. div*3 	= 3 div/any tag will open
+
+2. div*3>h2 	= div gular vitor h2 tag boshe jabe
+
+3. div*3>h2+p 	= div gular vitore h2 tag ar p tag boshe jabe
+
+4. div*3>h2{ type text }+p { serial no. -$ } = {} = text will add. -$ = serially number will add.
+
+5. Alt + Shift + Down Arrow  =  The line will be copied Down. 
+
+================== Module 5.5 ( Bonus )===============================
+
+1. Display: inline = shob tag/Block element gula ak line e eshe porbe.
+
+2. Display: block  = Shob tag/ Inline element gula alada alada line e ashe porbe.
+
+3. Inline Elements er Height/ Weight/Margin-top/Margin-bottom kaj korbe na. but
+  ( Display : inline-block ) dile kaj korbe.
+
+4. h1: hover {  }  = it is pseudo css. 
+
+5. li: first-child { }   = first tag ta style hoye jabe
+
+6. li: nth-child(2n) { } = even(jor) shonkhok tag gula style hoye jabe.
+
+7. li: nth-child(2n+1) { } = odd number	 
+
+8. h3::before{ content: 'HELLO' ; }  = this is pseudo element, Shob H3 tag er age HELLO boshe jabe.
+
+9. position: relative; 
+   left: 30px;     =    agula use korle position expection onujai shorano jay.
+   top : -40px; 
+
+10. position: absolute; 
+    left: 30px;     =    agula use korle position tar parent tag er jaygay chole jay. 
+    top : -40px;
+
+11. position: sticky; 
+    left: 30px;     =    agula use korle position tar container tag er moddhe sticky hoye thakbe. 
+    top : -40px;
+
+12. position: fixed; 
+    left: 30px;     =    agula use korle position screen er moddhe sticky hoye thakbe. 
+    top : -40px;
+
+13. position: relative; 
+    top : 75px;     =    z-index diye ak image er layer arek imager er upore/niche ana jay. 
+    z-index: 3;
+
+14. 

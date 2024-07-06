@@ -1,0 +1,21 @@
+1. Access Object
+
+const student = {
+    name: 'sakib khan' ,
+    age : 32 ,
+    movies : ['King Khan' ,'Dhakar mastan']
+}
+
+const myVariable = 'age';
+
+console.log(student.age) ;				= Direct by property.
+console.log(student['age']) // 				= access via property name string.
+console.log(student[myVariable]) ; 			= access via property name in a variable.
+
+
+2. Filter - includes
+
+const specificLetter = products.filter(p => p.name.includes('n')) ;	= array er 'n' included name gula filter hbe
+
+3. return paite chaile 		= forEach()
+   return na paite chaile 	= map()
