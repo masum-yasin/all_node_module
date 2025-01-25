@@ -18,3 +18,8 @@
 });
 
     </script>
+
+
+******************************************************* Multiple Row Data Fetch to ID Query*********************************************
+
+SELECT start_time, end_time, GROUP_CONCAT(day_of_week) AS day_of_week FROM shedule WHERE class_id = 19;

@@ -1,0 +1,24 @@
+***************************Find Out Unique Value From Table************************************
+
+SELECT student_registrationno FROM class_assign GROUP BY student_registrationno HAVING COUNT(*) > 1;
+
+
+
+***********************onno table a oi data gula ase kina check kora hoy ae query er maddhome*******************
+
+SELECT RegistrationNo FROM registered_students WHERE registered_students.id>=1833 AND RegistrationNo NOT IN(SELECT student_registrationno FROM class_assign);
+
+****************************************************************Foreign Key*******************************************************************************
+CREATE Table `invoices`(
+    `id` BIGINT(20) UNSIGNED NOT NUlL AUTO_INCREMENT PRIMARY KEY,
+    `total` VARCHAR(50) NOT NULL,
+    `discount` VARCHAR(50) NOT NULL,
+    `vat` VARCHAR(50) NOT NULL,
+    `payable` VARCHAR(50) NOT NULL,
+    `user_id` BIGINT(20) UNSIGNED NOT NULL,
+    `customer_id` BIGINT(20) UNSIGNED NOT NULL,
+    `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY  `user_id` REFERENCES `users`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
+    FOREIGN KEY  `customer_id` REFERENCES `customers`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE,
+)

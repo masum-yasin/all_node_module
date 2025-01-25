@@ -1,4 +1,5 @@
-
+################################################################ What Type Of Database structure ###################################################
+1. Structured 2. Un-Structured 3. Semi-Structured
 
 1. mysql -h localhost -u root -p
 

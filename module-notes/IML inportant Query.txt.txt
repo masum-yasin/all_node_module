@@ -1,0 +1,30 @@
+INSERT INTO class_assign (
+    student_id,
+    class_id,
+    student_registrationno,
+    academic_year,
+    status,
+    created_at
+)
+SELECT 
+    rs.ID,
+    c.id,
+    rs.RegistrationNo,
+    rs.AcademicYear,
+    0,                   -- Status is always 0
+    CURRENT_TIMESTAMP()  -- Use current timestamp for creation
+FROM 
+    registered_students rs
+JOIN 
+    class c
+ON 
+    rs.Course = c.course
+    AND rs.Language = c.language
+WHERE 
+    rs.ID >= 1833  -- Ensure numeric comparison
+    AND (rs.Course = 'Elementary Certificate Course' OR rs.Course = 'Short Course')
+    AND NOT EXISTS (
+        SELECT 1
+        FROM class_assign ca
+        WHERE ca.student_id = rs.ID
+    );
