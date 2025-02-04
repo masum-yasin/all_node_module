@@ -28,3 +28,24 @@ WHERE
         FROM class_assign ca
         WHERE ca.student_id = rs.ID
     );
+
+
+************************************************Waiver Fees Insert Data***************************************************************
+
+
+INSERT INTO student_wise_fees (feesparticular_id, class_id, std_reg_no, invoice_id, session, Amount, payment_id, waiver_status, updated_by, created_at, updated_at)
+SELECT 
+    cwf.feesparticular_id,
+    cwf.class_id,
+    si.registrationno AS std_reg_no,
+    si.invoiceid AS invoice_id,
+    cwf.session,
+    cwf.Amount,
+    si.payment_id,
+    0 AS waiver_status, -- Default value
+    'System' AS updated_by, -- Indicating system entry, change if needed
+    NOW() AS created_at,
+    NOW() AS updated_at
+FROM class_wise_fees cwf
+JOIN student_invoice si 
+    ON cwf.payment_id = si.payment_id;
