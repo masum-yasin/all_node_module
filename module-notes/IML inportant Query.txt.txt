@@ -49,3 +49,11 @@ SELECT
 FROM class_wise_fees cwf
 JOIN student_invoice si 
     ON cwf.payment_id = si.payment_id;
+
+*************************************************** All Student Academic Year Update Query******************************
+
+UPDATE registered_students rs
+JOIN class_assign ca ON rs.RegistrationNo = ca.student_registrationno
+JOIN class c ON ca.class_id = c.id
+SET rs.AcademicYear = c.session
+WHERE rs.AcademicYear <> c.session;
